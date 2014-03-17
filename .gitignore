@@ -1,0 +1,7 @@
+*.iml
+*.jar
+*.properties
+*.war
+.idea/*
+*.obj
+*.out
