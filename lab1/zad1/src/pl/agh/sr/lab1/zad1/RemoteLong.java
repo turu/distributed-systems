@@ -11,7 +11,7 @@ import java.util.Random;
 public class RemoteLong extends RemoteRandom {
 
     @Override
-    public long send(DataOutputStream out) throws IOException {
+    public long provideAndSend(DataOutputStream out) throws IOException {
         long value = random.nextLong();
         out.writeLong(value);
         return value;

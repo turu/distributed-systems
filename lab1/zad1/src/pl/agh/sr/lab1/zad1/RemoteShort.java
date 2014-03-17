@@ -12,7 +12,7 @@ public class RemoteShort extends RemoteRandom {
     private static final int MAX_SHORT = 65536;
 
     @Override
-    public long send(DataOutputStream out) throws IOException {
+    public long provideAndSend(DataOutputStream out) throws IOException {
         int value = random.nextInt(MAX_SHORT);
         out.writeShort(value);
         return value;

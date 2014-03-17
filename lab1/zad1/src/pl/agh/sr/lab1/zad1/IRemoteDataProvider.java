@@ -7,7 +7,7 @@ import java.io.IOException;
 /**
  * Author: Piotr Turek
  */
-public interface IRemoteData {
-   long send(DataOutputStream out) throws IOException;
+public interface IRemoteDataProvider {
+   long provideAndSend(DataOutputStream out) throws IOException;
    long receive(DataInputStream in) throws IOException;
 }

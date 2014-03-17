@@ -12,7 +12,7 @@ public class RemoteChar extends RemoteRandom {
     private static final int MAX_CHAR = 256;
 
     @Override
-    public long send(DataOutputStream out) throws IOException {
+    public long provideAndSend(DataOutputStream out) throws IOException {
         int value = random.nextInt(MAX_CHAR);
         out.writeByte(value);
         return value;

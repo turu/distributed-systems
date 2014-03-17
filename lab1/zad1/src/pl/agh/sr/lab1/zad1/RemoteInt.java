@@ -10,7 +10,7 @@ import java.io.IOException;
 public class RemoteInt extends RemoteRandom {
 
     @Override
-    public long send(DataOutputStream out) throws IOException {
+    public long provideAndSend(DataOutputStream out) throws IOException {
         int value = random.nextInt();
         out.writeInt(value);
         return value;

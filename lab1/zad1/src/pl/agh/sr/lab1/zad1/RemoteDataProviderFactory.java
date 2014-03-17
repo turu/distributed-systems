@@ -3,15 +3,15 @@ package pl.agh.sr.lab1.zad1;
 /**
  * Author: Piotr Turek
  */
-public class RemoteDataFactory implements IRemoteDataFactory {
+public class RemoteDataProviderFactory implements IRemoteDataProviderFactory {
     private int messageSize;
 
-    public RemoteDataFactory(int messageSize) {
+    public RemoteDataProviderFactory(int messageSize) {
         this.messageSize = messageSize;
     }
 
     @Override
-    public IRemoteData create() {
+    public IRemoteDataProvider create() {
         switch (messageSize) {
             case 1:
                 return new RemoteChar();

@@ -9,10 +9,10 @@ public class Sender {
 
     private static final int DEFAULT_PORT = 7777;
     private final String hostname;
-    private final IRemoteData remoteData;
+    private final IRemoteDataProvider remoteData;
     private int messageCount;
 
-    public Sender(String hostname, IRemoteData remoteData, int messageCount) {
+    public Sender(String hostname, IRemoteDataProvider remoteData, int messageCount) {
         this.hostname = hostname;
         this.remoteData = remoteData;
         this.messageCount = messageCount;
@@ -27,7 +27,7 @@ public class Sender {
 
     private void finalizeIteration() {
         try {
-            Thread.sleep(2000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
             throw new RuntimeException(e);
@@ -47,7 +47,7 @@ public class Sender {
         final DataOutputStream outputStream = new DataOutputStream(socket.getOutputStream());
         final DataInputStream inputStream = new DataInputStream(socket.getInputStream());
 
-        long data = remoteData.send(outputStream);
+        long data = remoteData.provideAndSend(outputStream);
         System.out.println("Message sent: " + data);
 
         data = remoteData.receive(inputStream);
@@ -66,8 +66,9 @@ public class Sender {
         final String hostname = args[0].trim();
         final int messageSize = Integer.parseInt(args[1].trim());
         final int numberOfMessages = Integer.parseInt(args[2].trim());
-        final IRemoteDataFactory factory = new RemoteDataFactory(messageSize);
-        final IRemoteData remoteData = factory.create();
+
+        final IRemoteDataProviderFactory factory = new RemoteDataProviderFactory(messageSize);
+        final IRemoteDataProvider remoteData = factory.create();
 
         return new Sender(hostname, remoteData, numberOfMessages);
     }
