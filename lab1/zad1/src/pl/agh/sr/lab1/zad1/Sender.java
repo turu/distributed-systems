@@ -70,12 +70,13 @@ public class Sender {
 
         final IRemoteDataProviderFactory factory = new RemoteDataProviderFactory(messageSize);
         final IRemoteDataProvider remoteData = factory.create();
+        System.out.println("Using dataProvider: " + remoteData);
 
         return new Sender(hostname, remoteData, numberOfMessages);
     }
 
     private static void validateArgs(String[] args) {
-        if (args.length != 2) {
+        if (args.length != 3) {
             System.out.println("Usage: <server addr> <size of a message in bytes> <number of messages>");
             System.exit(-1);
         }

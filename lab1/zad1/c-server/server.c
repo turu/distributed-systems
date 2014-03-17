@@ -19,19 +19,17 @@ void handleLong(int client_socket);
 void iteration(void);
 
 int server_socket;
+int message_size;
 
 int main(int argc, char *argv[]) {
-  int client_socket;
-  int message_size;
-
   if (argc != 2) {
-    printf("Usage: <message size in bytes> {1, 2, 4, 8}\n", argv[0]);
+    printf("Usage: <message size in bytes> {1, 2, 4, 8}\n");
     return 1;
   }
 
   message_size = atoi(argv[1]);
   if (message_size != 1 && message_size != 2 && message_size != 4 && message_size != 8) {
-    printf("Usage: <message size in bytes> {1, 2, 4, 8}\n", argv[0]);
+    printf("Usage: <message size in bytes> {1, 2, 4, 8}\n");
     return -1;
   }
   
@@ -77,7 +75,7 @@ void handleLong(int client_socket) {
   uint64_t buff;
   recv(client_socket, &buff, 8, 0);
   buff = htonll(buff);
-  printf("Received: %lld (long)\n", buff);
+  printf("Received: %ld (long)\n", buff);
   buff++;
   buff = htonll(buff);
   send(client_socket, &buff, 8, 0);
@@ -99,9 +97,9 @@ void iteration() {
   struct sockaddr_in client_address;
   socklen_t client_address_len = sizeof(client_address);
 
-  client_socket = accept(server_socket, (struct sockaddr *)&client_address, &client_address_len);
+  int client_socket = accept(server_socket, (struct sockaddr *)&client_address, &client_address_len);
   
-  handleMessage(clientSocket);
+  handleMessage(client_socket);
 
   close(client_socket);
 }
