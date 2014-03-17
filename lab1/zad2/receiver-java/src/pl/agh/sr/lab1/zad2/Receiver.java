@@ -25,25 +25,36 @@ public class Receiver {
 
     private void tryReceiveFile(ServerSocket serverSocket) {
         final File outputFile = new File(outputDir, Long.toString(System.currentTimeMillis()));
-        try (Socket socket = serverSocket.accept(); OutputStream outputStream = new FileOutputStream(outputFile)) {
 
-            final InputStream inputStream = socket.getInputStream();
-            final DataInputStream dataInputStream = new DataInputStream(inputStream);
+        try (Socket socket = serverSocket.accept();
+             OutputStream outputStream = new FileOutputStream(outputFile)) {
 
-            final int fileLength = dataInputStream.readInt();
-            final byte[] buffer = new byte[1024];
+            final DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
 
-            int totalBytesRead = 0;
-
-            while (totalBytesRead < fileLength) {
-                final int bytesRead = dataInputStream.read(buffer);
-                outputStream.write(buffer, 0, bytesRead);
-                totalBytesRead += bytesRead;
-            }
-
+            readAndStoreBytes(outputStream, dataInputStream);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void readAndStoreBytes(OutputStream outputStream, DataInputStream dataInputStream) throws IOException {
+        final int fileLength = dataInputStream.readInt();
+        final byte[] buffer = new byte[fileLength];
+
+        int totalRead = 0;
+        while (totalRead < fileLength) {
+            final int bytesRead = readAndStoreChunk(outputStream, dataInputStream, buffer);
+            if (bytesRead == -1) {
+                break;
+            }
+            totalRead += bytesRead;
+        }
+    }
+
+    private int readAndStoreChunk(OutputStream outputStream, DataInputStream dataInputStream, byte[] buffer) throws IOException {
+        final int bytesRead = dataInputStream.read(buffer);
+        outputStream.write(buffer, 0, bytesRead);
+        return bytesRead;
     }
 
     public static void main(String[] args) {
