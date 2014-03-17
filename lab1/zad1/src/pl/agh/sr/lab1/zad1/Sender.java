@@ -8,8 +8,9 @@ import java.net.Socket;
 public class Sender {
 
     private static final int DEFAULT_PORT = 7777;
-    private final String hostname;
+
     private final IRemoteDataProvider remoteData;
+    private final String hostname;
     private int messageCount;
 
     public Sender(String hostname, IRemoteDataProvider remoteData, int messageCount) {
