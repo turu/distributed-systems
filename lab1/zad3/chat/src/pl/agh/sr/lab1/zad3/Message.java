@@ -38,22 +38,41 @@ public class Message {
         final ByteArrayOutputStream byteStream = new ByteArrayOutputStream(1024);
         final DataOutputStream out = new DataOutputStream(byteStream);
 
-        out.writeUTF(username);
-        out.writeUTF(line);
+        out.writeBytes(trimToSize(username, 6));
+        out.writeBytes(trimToSize(line, 20));
         out.writeLong(timestamp);
-        out.writeLong(this.hashCode());
+        out.writeInt(this.hashCode());
 
         return byteStream.toByteArray();
+    }
+
+    private String trimToSize(String username, int length) {
+        if (username.length() < length) {
+            return addPadding(username, length - username.length());
+        }
+        return username.substring(0, length-1);
+    }
+
+    private String addPadding(String username, int paddingLength) {
+        StringBuilder sb = new StringBuilder();
+        while (paddingLength-- > 0) {
+            sb.append(' ');
+        }
+        return username + sb.toString();
     }
 
     public static Message getFromBytes(byte[] dataBuffer) throws IOException {
         final ByteArrayInputStream byteStream = new ByteArrayInputStream(dataBuffer);
         final DataInputStream in = new DataInputStream(byteStream);
+        byte[] userBuffer = new byte[6];
+        byte[] lineBuffer = new byte[20];
 
-        final String username = in.readUTF();
-        final String line = in.readUTF();
+        in.read(userBuffer);
+        in.read(lineBuffer);
+        final String username = new String(userBuffer);
+        final String line = new String(lineBuffer);
         final long timestamp = in.readLong();
-        final long checksum = in.readLong();
+        final long checksum = in.readInt();
 
         final Message message = new Message(username, line, timestamp);
 

@@ -3,7 +3,6 @@ package pl.agh.sr.lab1.zad3;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
-import java.net.InetAddress;
 import java.net.MulticastSocket;
 
 /**
@@ -22,15 +21,16 @@ public class Receiver implements Runnable {
 
     @Override
     public void run() {
-        try (MulticastSocket socket = createSocket()) {
+        try (MulticastSocket socket = new MulticastSocket(port)) {
+            socket.joinGroup(Chat.INET_ADDRESS);
             while (!Thread.interrupted()) {
-                byte[] dataBuffer = new byte[1024];
-                final DatagramPacket packet = new DatagramPacket(dataBuffer, dataBuffer.length);
-                System.out.println("sdads");
+                byte[] dataBuffer = new byte[38];
+                final DatagramPacket packet = new DatagramPacket(dataBuffer, 38);
                 socket.receive(packet);
+//                System.out.println("Message received");
 
                 final Message message = Message.getFromBytes(dataBuffer);
-                if (message.getUsername().equals(username)) {
+                if (!message.getUsername().equals(username)) {
                     System.out.println(message);
                 }
             }
@@ -39,10 +39,4 @@ public class Receiver implements Runnable {
         }
     }
 
-    private MulticastSocket createSocket() throws IOException {
-        final MulticastSocket socket = new MulticastSocket(port);
-        final InetAddress group = InetAddress.getByName(address);
-        socket.joinGroup(group);
-        return socket;
-    }
 }

@@ -25,10 +25,10 @@ public class Sender implements Runnable {
             while (!Thread.interrupted()) {
                 final String line = scanner.nextLine();
                 final Message message = new Message(username, line);
-//                System.out.println(message);
                 byte[] bytes = message.getAsBytes();
-                final DatagramPacket packet = new DatagramPacket(bytes, bytes.length, InetAddress.getByName(address), port);
+                final DatagramPacket packet = new DatagramPacket(bytes, bytes.length, Chat.INET_ADDRESS, port);
                 socket.send(packet);
+//                System.out.println(message);
             }
         } catch (SocketException e) {
             e.printStackTrace();
