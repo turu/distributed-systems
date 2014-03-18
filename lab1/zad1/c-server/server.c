@@ -21,6 +21,12 @@ void iteration(void);
 int server_socket;
 int message_size;
 
+void close_server_socket() {
+  if (server_socket > 0) {
+    close(server_socket);
+  }
+}
+
 int main(int argc, char *argv[]) {
   if (argc != 2) {
     printf("Usage: <message size in bytes> {1, 2, 4, 8}\n");
@@ -34,6 +40,7 @@ int main(int argc, char *argv[]) {
   }
   
   server_socket = createServerSocket();
+  atexit(close_server_socket);
 
   while (1) {
     iteration();

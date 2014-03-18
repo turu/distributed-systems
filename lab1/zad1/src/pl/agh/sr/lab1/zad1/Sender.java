@@ -19,20 +19,15 @@ public class Sender {
         this.messageCount = messageCount;
     }
 
-    public void play() {
+    public void play() throws InterruptedException {
         while (messageCount-- > 0) {
             sendAndReceive();
             finalizeIteration();
         }
     }
 
-    private void finalizeIteration() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
+    private void finalizeIteration() throws InterruptedException {
+        Thread.sleep(1000);
     }
 
     private void sendAndReceive() {
@@ -55,7 +50,7 @@ public class Sender {
         System.out.println("Message returned: " + data);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         validateArgs(args);
 
         final Sender sender = setUpSender(args);
