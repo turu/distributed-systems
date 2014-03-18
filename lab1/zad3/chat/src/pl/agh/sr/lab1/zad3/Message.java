@@ -35,7 +35,7 @@ public class Message {
     }
 
     public byte[] getAsBytes() throws IOException {
-        final ByteArrayOutputStream byteStream = new ByteArrayOutputStream(1024);
+        final ByteArrayOutputStream byteStream = new ByteArrayOutputStream(38);
         final DataOutputStream out = new DataOutputStream(byteStream);
 
         out.writeBytes(trimToSize(username, 6));
@@ -46,11 +46,11 @@ public class Message {
         return byteStream.toByteArray();
     }
 
-    private String trimToSize(String username, int length) {
-        if (username.length() < length) {
-            return addPadding(username, length - username.length());
+    private String trimToSize(String string, int length) {
+        if (string.length() < length) {
+            return addPadding(string, length - string.length());
         }
-        return username.substring(0, length-1);
+        return string.substring(0, length - 1);
     }
 
     private String addPadding(String username, int paddingLength) {

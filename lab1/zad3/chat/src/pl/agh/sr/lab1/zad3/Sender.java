@@ -20,7 +20,9 @@ public class Sender implements Runnable {
 
     @Override
     public void run() {
-        try(DatagramSocket socket = new DatagramSocket()) {
+        try(MulticastSocket socket = new MulticastSocket()) {
+            socket.setInterface(InetAddress.getByName(null));
+            socket.joinGroup(Chat.INET_ADDRESS);
             final Scanner scanner = new Scanner(System.in);
             while (!Thread.interrupted()) {
                 final String line = scanner.nextLine();

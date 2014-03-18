@@ -3,6 +3,7 @@ package pl.agh.sr.lab1.zad3;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
+import java.net.InetAddress;
 import java.net.MulticastSocket;
 
 /**
@@ -22,6 +23,7 @@ public class Receiver implements Runnable {
     @Override
     public void run() {
         try (MulticastSocket socket = new MulticastSocket(port)) {
+            socket.setInterface(InetAddress.getByName(null));
             socket.joinGroup(Chat.INET_ADDRESS);
             while (!Thread.interrupted()) {
                 byte[] dataBuffer = new byte[38];
