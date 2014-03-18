@@ -5,10 +5,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
 public class Chat {
-    private static final String DEFAULT_ADDRESS = "";
+    private static final String DEFAULT_ADDRESS = "225.7.7.7";
     private static final int DEFAULT_PORT = 7777;
 
-    private final ExecutorService executorService = Executors.newFixedThreadPool(2, new DaemonThreadFactory());
+    private final ExecutorService executorService = Executors.newFixedThreadPool(2);
     private final String name;
 
     public Chat(String name) {
@@ -34,12 +34,4 @@ public class Chat {
         executorService.submit(new Receiver(DEFAULT_ADDRESS, DEFAULT_PORT, name));
     }
 
-    private static class DaemonThreadFactory implements ThreadFactory {
-        @Override
-        public Thread newThread(Runnable runnable) {
-            Thread thread = Executors.defaultThreadFactory().newThread(runnable);
-            thread.setDaemon(true);
-            return thread;
-        }
-    }
 }

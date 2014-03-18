@@ -68,14 +68,14 @@ int send_file(FILE * file, int client_socket) {
   send(client_socket, &rlength, 4, 0);
   
   while (total_sent < length) {
-    int read = fread(buffer, 1, 1024, file);
+    int bytes_read = fread(buffer, 1, 1024, file);
     
-    if (send(client_socket, buffer, read, 0) != read) {
+    if (send(client_socket, buffer, bytes_read, 0) < bytes_read) {
       printf("Failure sending file chunk.\n");
       return -1;
     }
     
-    total_sent += read;
+    total_sent += bytes_read;
   }
 
   return total_sent;

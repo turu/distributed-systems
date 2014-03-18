@@ -33,7 +33,6 @@ int main(int argc, char *argv[]) {
     return -1;
   }
   
-  atexit(closeSocket);
   server_socket = createServerSocket();
 
   while (1) {
@@ -44,41 +43,41 @@ int main(int argc, char *argv[]) {
 }
 
 void handleChar(int client_socket) {
-  uint8_t buff;
-  recv(client_socket, &buff, 1, 0);
-  printf("Received: %d (char)\n", buff);
-  buff++;
-  send(client_socket, &buff, 1, 0);
+  uint8_t var;
+  recv(client_socket, &var, 1, 0);
+  printf("Received: %d (char)\n", var);
+  var++;
+  send(client_socket, &var, 1, 0);
 }
 
 void handleShort(int client_socket) {
-  uint16_t buff;
-  recv(client_socket, &buff, 2, 0);
-  buff = ntohs(buff);
-  printf("Received: %d (short)\n", buff);
-  buff++;
-  buff = htons(buff);
-  send(client_socket, &buff, 2, 0);
+  uint16_t var;
+  recv(client_socket, &var, 2, 0);
+  var = ntohs(var);
+  printf("Received: %d (short)\n", var);
+  var++;
+  var = htons(var);
+  send(client_socket, &var, 2, 0);
 }
 
 void handleInt(int client_socket) {
-  uint32_t buff;
-  recv(client_socket, &buff, 4, 0);
-  buff = ntohl(buff);
-  printf("Received: %d (int)\n", buff);
-  buff++;
-  buff = htonl(buff);
-  send(client_socket, &buff, 4, 0);
+  uint32_t var;
+  recv(client_socket, &var, 4, 0);
+  var = ntohl(var);
+  printf("Received: %d (int)\n", var);
+  var++;
+  var = htonl(var);
+  send(client_socket, &var, 4, 0);
 }
 
 void handleLong(int client_socket) {
-  uint64_t buff;
-  recv(client_socket, &buff, 8, 0);
-  buff = htonll(buff);
-  printf("Received: %ld (long)\n", buff);
-  buff++;
-  buff = htonll(buff);
-  send(client_socket, &buff, 8, 0);
+  uint64_t var;
+  recv(client_socket, &var, 8, 0);
+  var = htonll(var);
+  printf("Received: %ld (long)\n", var);
+  var++;
+  var = htonll(var);
+  send(client_socket, &var, 8, 0);
 }
 
 void handleMessage(int client_socket) {
@@ -104,12 +103,6 @@ void iteration() {
   close(client_socket);
 }
 
-void closeSocket(void) {
-  if (socket > 0) {
-    close(server_socket);
-  }
-}
-
 int createServerSocket(void) {
   int server_socket;
   struct sockaddr_in server_address;
@@ -126,11 +119,12 @@ int createServerSocket(void) {
 
   if (bind(server_socket, (struct sockaddr *)&server_address, sizeof(server_address)) == -1) {
     perror("Failure binding socket\n");
+    close(server_socket);
     exit(10);
   }
 
   if (listen(server_socket, 5) == -1) {
-    perror("Could not start listening on socket");
+    perror("Failure listening on socket");
     close(server_socket);
     exit(11);
   }

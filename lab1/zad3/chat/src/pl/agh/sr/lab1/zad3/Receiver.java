@@ -26,6 +26,7 @@ public class Receiver implements Runnable {
             while (!Thread.interrupted()) {
                 byte[] dataBuffer = new byte[1024];
                 final DatagramPacket packet = new DatagramPacket(dataBuffer, dataBuffer.length);
+                System.out.println("sdads");
                 socket.receive(packet);
 
                 final Message message = Message.getFromBytes(dataBuffer);

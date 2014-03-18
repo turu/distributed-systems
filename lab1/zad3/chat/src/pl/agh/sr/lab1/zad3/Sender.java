@@ -25,6 +25,7 @@ public class Sender implements Runnable {
             while (!Thread.interrupted()) {
                 final String line = scanner.nextLine();
                 final Message message = new Message(username, line);
+//                System.out.println(message);
                 byte[] bytes = message.getAsBytes();
                 final DatagramPacket packet = new DatagramPacket(bytes, bytes.length, InetAddress.getByName(address), port);
                 socket.send(packet);
