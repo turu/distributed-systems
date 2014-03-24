@@ -62,6 +62,9 @@
     <breakpoint_rules />
     <ui_properties />
   </component>
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
   <component name="FindBugsConfigurable">
     <option name="make" value="true" />
     <option name="effort" value="default" />
@@ -77,7 +80,7 @@
     </option>
   </component>
   <component name="ProjectKey">
-    <option name="state" value="project://8d4d118c-cce0-4f49-9bd4-5f90b271af0e" />
+    <option name="state" value="https://turu@bitbucket.org/turu/distributed-systems.git" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
