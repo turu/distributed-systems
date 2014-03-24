@@ -29,7 +29,6 @@ public class Receiver implements Runnable {
                 byte[] dataBuffer = new byte[38];
                 final DatagramPacket packet = new DatagramPacket(dataBuffer, 38);
                 socket.receive(packet);
-//                System.out.println("Message received");
 
                 final Message message = Message.getFromBytes(dataBuffer);
                 if (!message.getUsername().equals(username)) {

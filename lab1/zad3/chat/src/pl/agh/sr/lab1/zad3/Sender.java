@@ -30,7 +30,6 @@ public class Sender implements Runnable {
                 byte[] bytes = message.getAsBytes();
                 final DatagramPacket packet = new DatagramPacket(bytes, bytes.length, Chat.INET_ADDRESS, port);
                 socket.send(packet);
-//                System.out.println(message);
             }
         } catch (SocketException e) {
             e.printStackTrace();
