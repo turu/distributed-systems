@@ -42,8 +42,8 @@ public class RunnerWarehouseLocal {
 	}
 	
 	public void configureLocalMultipleTx() throws Throwable {
-		warehouseService = new WarehouseManagerImpl_LocalMultipleTx(
-				productDS, new ProductDao_ConnPassing());
+//		warehouseService = new WarehouseManagerImpl_LocalMultipleTx(
+//				productDS, new ProductDao_ConnPassing());
 	}	
 
 	private Customer getCustomer() {

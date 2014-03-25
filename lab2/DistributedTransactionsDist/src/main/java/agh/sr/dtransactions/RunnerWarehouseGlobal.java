@@ -9,10 +9,7 @@ import javax.transaction.TransactionManager;
 import javax.transaction.UserTransaction;
 
 import agh.sr.dtransactions.orderprocessing.dao.ProductDao;
-import agh.sr.dtransactions.orderprocessing.logic.Customer;
-import agh.sr.dtransactions.orderprocessing.logic.Order;
-import agh.sr.dtransactions.orderprocessing.logic.OrderItem;
-import agh.sr.dtransactions.orderprocessing.logic.WarehouseManagerService;
+import agh.sr.dtransactions.orderprocessing.logic.*;
 import agh.sr.dtransactions.test.ProductDao_ExOnDecrease;
 import agh.sr.dtransactions.test.ProductDao_ExOnLogging;
 
@@ -39,8 +36,8 @@ public class RunnerWarehouseGlobal {
 	}
 
 	public void configureGlobalTx() throws Throwable {
-//		warehouseService = new WarehouseManagerImpl_GlobalTx(new ProductDao(
-//				productDS), userTransaction);
+		warehouseService = new WarehouseManagerImpl_GlobalTx(new ProductDao(
+				productDS), userTransaction);
 	}
 
 	public void configureGlobalMultipleTx() throws Throwable {
@@ -136,9 +133,9 @@ public class RunnerWarehouseGlobal {
 	}
 
 	public void test() throws Throwable {
-		// new GlobalTx().makeCommit(); /* ok */
-		// new GlobalTx().makeExOnDecrease(); /* will rollback all */
-		// new GlobalTx().makeExOnLogging(); /* will rollback all */
+		new GlobalTx().makeCommit(); /* ok */
+		new GlobalTx().makeExOnDecrease(); /* will rollback all */
+		new GlobalTx().makeExOnLogging(); /* will rollback all */
 
 		// new GlobalMultipleTx().makeCommit(); /* ok */
 		// new GlobalMultipleTx().makeExOnDecrease(); /* will rollback all
@@ -185,7 +182,7 @@ public class RunnerWarehouseGlobal {
 
 	public static void main(String[] args) throws Throwable {
 		RunnerWarehouseGlobal runner = new RunnerWarehouseGlobal();
-		//runner.test();
-		runner.measure(10, 1000);
+		runner.test();
+//		runner.measure(10, 1000);
 	}
 }
