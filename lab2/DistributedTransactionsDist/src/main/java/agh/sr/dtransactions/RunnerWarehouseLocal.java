@@ -165,7 +165,7 @@ public class RunnerWarehouseLocal {
 //		new LocalTx().makeCommit(); /* ok */
 //		new LocalTx().makeExOnDecrease(); /* will rollback all */
 		
-		new LocalSavepointsTx().makeCommit(); /* ok */
+//		new LocalSavepointsTx().makeCommit(); /* ok */
 //		new LocalSavepointsTx().makeExOnDecrease(); /* will rollback all */
 //		new LocalSavepointsTx().makeExOnLogging(); /* will rollback only audit */
 		

@@ -2,16 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff301dcd-a155-4c05-a896-986c81af56e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_LocalSavepointsTx.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_LocalMultipleTx.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/RunnerWarehouseLocal.java" afterPath="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/RunnerWarehouseLocal.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DistributedTransactionsDist.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1395744559974" ignored="false" />
-    <file path="/fragment.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1395744980977" ignored="false" />
+    <file path="/Dummy.txt" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1395745690476" ignored="false" />
+    <file path="/fragment.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1395745778276" ignored="false" />
     <file path="/WarehouseManagerImpl_LocalTx.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1395745631338" ignored="false" />
     <file path="/WarehouseManagerImpl_LocalSavepointsTX.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1395745668730" ignored="false" />
+    <file path="/WarehouseManagerImpl_LocalMultipleTx.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1395746180657" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,22 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RunnerWarehouseLocal.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="RunnerWarehouseLocal.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/RunnerWarehouseLocal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="168" column="16" selection-start="4408" selection-end="4408" vertical-scroll-proportion="0.6">
+            <state line="170" column="16" selection-start="4550" selection-end="4550" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WarehouseManagerImpl_LocalTx.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_LocalTx.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="39" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -110,10 +100,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="WarehouseManagerImpl_LocalMultipleTx.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_LocalMultipleTx.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="27" selection-start="1830" selection-end="1830" vertical-scroll-proportion="0.25">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="WarehouseManagerImpl_LocalSavepointsTx.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_LocalSavepointsTx.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="51" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0">
+            <state line="61" column="36" selection-start="2190" selection-end="2190" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -144,6 +145,7 @@
         <option value="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_LocalSavepointsTX.java" />
         <option value="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_LocalSavepointsTx.java" />
         <option value="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/RunnerWarehouseLocal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_LocalMultipleTx.java" />
       </list>
     </option>
   </component>
@@ -485,7 +487,11 @@
       <created>1395744567529</created>
       <updated>1395744567529</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="lab2 zad3">
+      <created>1395745696706</created>
+      <updated>1395745696706</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -566,7 +572,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab2 zad2" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab2 zad3" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -584,6 +590,7 @@
     <MESSAGE value="lab2 os fix" />
     <MESSAGE value="lab2 hibernate fix" />
     <MESSAGE value="lab2 zad2" />
+    <MESSAGE value="lab2 zad3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -658,25 +665,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerService_ConnPassing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="17" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_LocalTx.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="39" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_LocalSavepointsTx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="51" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0">
+        <state line="11" column="39" selection-start="296" selection-end="296" vertical-scroll-proportion="0.55">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -685,8 +676,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/RunnerWarehouseLocal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="168" column="16" selection-start="4408" selection-end="4408" vertical-scroll-proportion="0.6">
+        <state line="170" column="16" selection-start="4550" selection-end="4550" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerService_ConnPassing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="17" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_LocalSavepointsTx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="36" selection-start="2190" selection-end="2190" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_LocalMultipleTx.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="27" selection-start="1830" selection-end="1830" vertical-scroll-proportion="0.25">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
