@@ -6,10 +6,7 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import agh.sr.dtransactions.orderprocessing.dao.connpassing.ProductDao_ConnPassing;
-import agh.sr.dtransactions.orderprocessing.logic.Customer;
-import agh.sr.dtransactions.orderprocessing.logic.Order;
-import agh.sr.dtransactions.orderprocessing.logic.OrderItem;
-import agh.sr.dtransactions.orderprocessing.logic.WarehouseManagerService_ConnPassing;
+import agh.sr.dtransactions.orderprocessing.logic.*;
 import agh.sr.dtransactions.orderprocessing.logic.impl.WarehouseManagerImpl_NonTx;
 import agh.sr.dtransactions.test.ProductDao_ConnPassing_ExOnDecrease;
 import agh.sr.dtransactions.test.ProductDao_ConnPassing_ExOnLogging;
@@ -30,13 +27,13 @@ public class RunnerWarehouseLocal {
 	}
 
 	public void configureNonTx() throws Throwable {
-		warehouseService = new WarehouseManagerImpl_NonTx(productDS,
-				new ProductDao_ConnPassing());
+//		warehouseService = new WarehouseManagerImpl_NonTx(productDS,
+//				new ProductDao_ConnPassing());
 	}
 
 	public void configureLocalTx() throws Throwable {
-//		warehouseService = new WarehouseManagerImpl_LocalTx(productDS,
-//				new ProductDao_ConnPassing());
+		warehouseService = new WarehouseManagerImpl_LocalTx(productDS,
+				new ProductDao_ConnPassing());
 	}
 
 	public void configureLocalSavepointsTx() throws Throwable {
@@ -166,7 +163,7 @@ public class RunnerWarehouseLocal {
 //		new NonTx().makeExOnDecrease(); /* will write only to audit */
 //		
 //		new LocalTx().makeCommit(); /* ok */
-//		new LocalTx().makeExOnDecrease(); /* will rollback all */
+		new LocalTx().makeExOnDecrease(); /* will rollback all */
 		
 //		new LocalSavepointsTx().makeCommit(); /* ok */
 //		new LocalSavepointsTx().makeExOnDecrease(); /* will rollback all */
