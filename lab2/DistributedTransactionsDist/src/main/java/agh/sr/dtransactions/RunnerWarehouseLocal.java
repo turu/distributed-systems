@@ -32,13 +32,13 @@ public class RunnerWarehouseLocal {
 	}
 
 	public void configureLocalTx() throws Throwable {
-		warehouseService = new WarehouseManagerImpl_LocalTx(productDS,
-				new ProductDao_ConnPassing());
+//		warehouseService = new WarehouseManagerImpl_LocalTx(productDS,
+//				new ProductDao_ConnPassing());
 	}
 
 	public void configureLocalSavepointsTx() throws Throwable {
-//		warehouseService = new WarehouseManagerImpl_LocalSavepointsTx(
-//				productDS, new ProductDao_ConnPassing());
+		warehouseService = new WarehouseManagerImpl_LocalSavepointsTx(
+				productDS, new ProductDao_ConnPassing());
 	}
 	
 	public void configureLocalMultipleTx() throws Throwable {
@@ -163,9 +163,9 @@ public class RunnerWarehouseLocal {
 //		new NonTx().makeExOnDecrease(); /* will write only to audit */
 //		
 //		new LocalTx().makeCommit(); /* ok */
-		new LocalTx().makeExOnDecrease(); /* will rollback all */
+//		new LocalTx().makeExOnDecrease(); /* will rollback all */
 		
-//		new LocalSavepointsTx().makeCommit(); /* ok */
+		new LocalSavepointsTx().makeCommit(); /* ok */
 //		new LocalSavepointsTx().makeExOnDecrease(); /* will rollback all */
 //		new LocalSavepointsTx().makeExOnLogging(); /* will rollback only audit */
 		
