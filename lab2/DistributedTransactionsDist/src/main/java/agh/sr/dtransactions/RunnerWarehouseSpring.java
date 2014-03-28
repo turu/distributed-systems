@@ -53,13 +53,13 @@ public class RunnerWarehouseSpring {
 	}
 
 	public void configureSpringTx() throws Throwable {
-		warehouseService = new WarehouseManagerImpl_SpringTx(new ProductDao(
-				productDS), springTransactionManager);
+//		warehouseService = new WarehouseManagerImpl_SpringTx(new ProductDao(
+//				productDS), springTransactionManager);
 	}
 
 	public void configureSpringMultipleTx() throws Throwable {
-//		warehouseService = new WarehouseManagerImpl_SpringMultipleTx(
-//				new ProductDao(productDS), springTransactionManager);
+		warehouseService = new WarehouseManagerImpl_SpringMultipleTx(
+				new ProductDao(productDS), springTransactionManager);
 	}
 
 	private Customer getCustomer() {
@@ -160,28 +160,28 @@ public class RunnerWarehouseSpring {
 	public void testSpring_Local() throws Throwable {
 		setupLocalTransactionManager();
 
-		new SpringTx().makeCommit(); /* ok */
-		new SpringTx().makeExOnDecrease(); /* will rollback all */
-		new SpringTx().makeExOnLogging(); /* will rollback all */
+//		new SpringTx().makeCommit(); /* ok */
+//		new SpringTx().makeExOnDecrease(); /* will rollback all */
+//		new SpringTx().makeExOnLogging(); /* will rollback all */
 
-		//new SpringMultipleTx().makeCommit(); /* ok */
-		// new SpringMultipleTx().makeExOnDecrease(); /* will rollback all
-		// beside logging */
-		// new SpringMultipleTx().makeExOnLogging(); /* will rollback only audit
+		new SpringMultipleTx().makeCommit(); /* ok */
+		new SpringMultipleTx().makeExOnDecrease(); /* will rollback all
+		beside logging */
+		new SpringMultipleTx().makeExOnLogging(); /* will rollback only audit
 		// */
 	}
 
 	public void testSpring_Global() throws Throwable {
 		setupGlobalTransactionManager();
 
-		new SpringTx().makeCommit(); /* ok */
-		new SpringTx().makeExOnDecrease(); /* will rollback all */
-		new SpringTx().makeExOnLogging(); /* will rollback all */
+//		new SpringTx().makeCommit(); /* ok */
+//		new SpringTx().makeExOnDecrease(); /* will rollback all */
+//		new SpringTx().makeExOnLogging(); /* will rollback all */
 
-		// new SpringMultipleTx().makeCommit(); /* ok */
-		// new SpringMultipleTx().makeExOnDecrease(); /* will rollback all
-		// beside logging */
-		// new SpringMultipleTx().makeExOnLogging(); /* will rollback only audit
+		new SpringMultipleTx().makeCommit(); /* ok */
+		new SpringMultipleTx().makeExOnDecrease(); /* will rollback all
+		beside logging */
+		new SpringMultipleTx().makeExOnLogging(); /* will rollback only audit
 		// */
 	}
 
@@ -240,7 +240,7 @@ public class RunnerWarehouseSpring {
 	public static void main(String[] args) throws Throwable {
 		RunnerWarehouseSpring runner = new RunnerWarehouseSpring();
 		runner.test();
-		//runner.measureLocal(10, 500);
-		//runner.measureGlobal(10, 500);	
+//		runner.measureLocal(10, 500);
+		runner.measureGlobal(10, 500);
 	}
 }
