@@ -13,6 +13,9 @@ import javax.sql.DataSource;
 import javax.transaction.TransactionManager;
 import javax.transaction.UserTransaction;
 
+import com.atomikos.icatch.jta.UserTransactionImp;
+import com.atomikos.icatch.jta.UserTransactionManager;
+import com.atomikos.jdbc.AtomikosDataSourceBean;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.apache.derby.jdbc.EmbeddedDataSource;
 import org.apache.derby.jdbc.EmbeddedXADataSource;
@@ -188,63 +191,63 @@ public class DBTxConfiguration {
 	}
 
 	// Configuration for atomikos:
-	//
-	// public static DataSource createXaDataSource(String dbName) throws
-	// Exception {
-	// EmbeddedXADataSource derbyXaDataSource = new EmbeddedXADataSource();
-	// derbyXaDataSource.setDatabaseName(dbName);
-	//
-	// AtomikosDataSourceBean xaDataSource = new AtomikosDataSourceBean();
-	// xaDataSource.setXaDataSource(derbyXaDataSource);
-	// xaDataSource.setUniqueResourceName(dbName);
-	// xaDataSource.setMaxPoolSize(100);
-	// return xaDataSource;
-	// }
-	//
-	// public static TransactionManager getTransactionManager() throws Exception
-	// {
-	// //initializeTm();
-	// UserTransactionManager userTransactionManager = new
-	// UserTransactionManager();
-	// userTransactionManager.setForceShutdown(false);
-	// userTransactionManager.init();
-	// return userTransactionManager;
-	// }
-	//
-	// public static UserTransaction getUserTransaction() throws Exception {
-	// //initializeTm();
-	// UserTransactionImp userTransactionImp = new UserTransactionImp();
-	// userTransactionImp.setTransactionTimeout(120);
-	// return userTransactionImp;
-	// }
-	//
 
-	public static TransactionManager getTransactionManager() throws Exception {
-		return TransactionManagerServices.getTransactionManager();
+	public static DataSource createXaDataSource(String dbName) throws
+	Exception {
+	EmbeddedXADataSource derbyXaDataSource = new EmbeddedXADataSource();
+	derbyXaDataSource.setDatabaseName(dbName);
+
+	AtomikosDataSourceBean xaDataSource = new AtomikosDataSourceBean();
+	xaDataSource.setXaDataSource(derbyXaDataSource);
+	xaDataSource.setUniqueResourceName(dbName);
+	xaDataSource.setMaxPoolSize(100);
+	return xaDataSource;
+	}
+
+	public static TransactionManager getTransactionManager() throws Exception
+	{
+	//initializeTm();
+	UserTransactionManager userTransactionManager = new
+	UserTransactionManager();
+	userTransactionManager.setForceShutdown(false);
+	userTransactionManager.init();
+	return userTransactionManager;
 	}
 
 	public static UserTransaction getUserTransaction() throws Exception {
-		TransactionManagerServices.getConfiguration().setJournal("null");
-		return TransactionManagerServices.getTransactionManager();
+	//initializeTm();
+	UserTransactionImp userTransactionImp = new UserTransactionImp();
+	userTransactionImp.setTransactionTimeout(120);
+	return userTransactionImp;
 	}
 
-	public static DataSource createXaDataSource(String dbName) throws Exception {
-		PoolingDataSource poolingDataSource = new PoolingDataSource();
-		poolingDataSource.setClassName(EmbeddedXADataSource.class.getName());
-		poolingDataSource.setUniqueName(dbName);
-
-		Properties props = new Properties();
-		props.setProperty("databaseName", dbName);
-
-		poolingDataSource.setDriverProperties(props);
-		poolingDataSource.setMaxPoolSize(100);
-		poolingDataSource.setAllowLocalTransactions(true);
-		poolingDataSource.init();
-		
-		poolingDataSource.setIsolationLevel("READ_UNCOMMITTED");
-
-		return poolingDataSource;
-	}
+//
+//	public static TransactionManager getTransactionManager() throws Exception {
+//		return TransactionManagerServices.getTransactionManager();
+//	}
+//
+//	public static UserTransaction getUserTransaction() throws Exception {
+//		TransactionManagerServices.getConfiguration().setJournal("null");
+//		return TransactionManagerServices.getTransactionManager();
+//	}
+//
+//	public static DataSource createXaDataSource(String dbName) throws Exception {
+//		PoolingDataSource poolingDataSource = new PoolingDataSource();
+//		poolingDataSource.setClassName(EmbeddedXADataSource.class.getName());
+//		poolingDataSource.setUniqueName(dbName);
+//
+//		Properties props = new Properties();
+//		props.setProperty("databaseName", dbName);
+//
+//		poolingDataSource.setDriverProperties(props);
+//		poolingDataSource.setMaxPoolSize(100);
+//		poolingDataSource.setAllowLocalTransactions(true);
+//		poolingDataSource.init();
+//
+//		poolingDataSource.setIsolationLevel("READ_UNCOMMITTED");
+//
+//		return poolingDataSource;
+//	}
 
 	public static PlatformTransactionManager getSpringTransactionManager_WithJDBC(
 			DataSource ds) throws Exception {

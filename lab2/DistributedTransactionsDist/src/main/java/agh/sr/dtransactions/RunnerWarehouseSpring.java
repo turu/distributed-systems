@@ -6,14 +6,11 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import agh.sr.dtransactions.orderprocessing.logic.*;
 import org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import agh.sr.dtransactions.orderprocessing.dao.ProductDao;
-import agh.sr.dtransactions.orderprocessing.logic.Customer;
-import agh.sr.dtransactions.orderprocessing.logic.Order;
-import agh.sr.dtransactions.orderprocessing.logic.OrderItem;
-import agh.sr.dtransactions.orderprocessing.logic.WarehouseManagerService;
 import agh.sr.dtransactions.test.ProductDao_ExOnDecrease;
 import agh.sr.dtransactions.test.ProductDao_ExOnLogging;
 
@@ -56,8 +53,8 @@ public class RunnerWarehouseSpring {
 	}
 
 	public void configureSpringTx() throws Throwable {
-//		warehouseService = new WarehouseManagerImpl_SpringTx(new ProductDao(
-//				productDS), springTransactionManager);
+		warehouseService = new WarehouseManagerImpl_SpringTx(new ProductDao(
+				productDS), springTransactionManager);
 	}
 
 	public void configureSpringMultipleTx() throws Throwable {
@@ -155,17 +152,17 @@ public class RunnerWarehouseSpring {
 	public void testSpring_Local_Badly() throws Throwable {
 		setupLocalTransactionManager_Badly();
 
-		// new SpringTx().makeCommit(); /* ok */
-		// new SpringTx().makeExOnDecrease(); /* logging should not be
+		new SpringTx().makeCommit(); /* ok */
+		new SpringTx().makeExOnDecrease(); /* logging should not be
 		// persistent and it is! Why? */
 	}
 
 	public void testSpring_Local() throws Throwable {
 		setupLocalTransactionManager();
 
-		// new SpringTx().makeCommit(); /* ok */
-		// new SpringTx().makeExOnDecrease(); /* will rollback all */
-		// new SpringTx().makeExOnLogging(); /* will rollback all */
+		new SpringTx().makeCommit(); /* ok */
+		new SpringTx().makeExOnDecrease(); /* will rollback all */
+		new SpringTx().makeExOnLogging(); /* will rollback all */
 
 		//new SpringMultipleTx().makeCommit(); /* ok */
 		// new SpringMultipleTx().makeExOnDecrease(); /* will rollback all
@@ -177,9 +174,9 @@ public class RunnerWarehouseSpring {
 	public void testSpring_Global() throws Throwable {
 		setupGlobalTransactionManager();
 
-		// new SpringTx().makeCommit(); /* ok */
-		// new SpringTx().makeExOnDecrease(); /* will rollback all */
-		// new SpringTx().makeExOnLogging(); /* will rollback all */
+		new SpringTx().makeCommit(); /* ok */
+		new SpringTx().makeExOnDecrease(); /* will rollback all */
+		new SpringTx().makeExOnLogging(); /* will rollback all */
 
 		// new SpringMultipleTx().makeCommit(); /* ok */
 		// new SpringMultipleTx().makeExOnDecrease(); /* will rollback all
@@ -189,8 +186,8 @@ public class RunnerWarehouseSpring {
 	}
 
 	public void test() throws Throwable {
-		// testSpring_Local_Badly();
-		// testSpring_Local();
+//		testSpring_Local_Badly();
+//		testSpring_Local();
 		testSpring_Global();
 	}
 
