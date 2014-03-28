@@ -3,7 +3,6 @@ package agh.sr.dtransactions.orderprocessing.logic;
 import agh.sr.dtransactions.orderprocessing.dao.ProductDao;
 
 import javax.transaction.*;
-import java.sql.SQLException;
 
 /**
  * Author: Piotr Turek
@@ -53,6 +52,7 @@ public class WarehouseManagerImpl_GlobalMultipleTx implements WarehouseManagerSe
         try {
             userTransaction.begin();
             productDao.logLocationAndTotalPrice(customer, totalPrice);
+            userTransaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
             try {

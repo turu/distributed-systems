@@ -36,13 +36,13 @@ public class RunnerWarehouseGlobal {
 	}
 
 	public void configureGlobalTx() throws Throwable {
-		warehouseService = new WarehouseManagerImpl_GlobalTx(new ProductDao(
-				productDS), userTransaction);
+//		warehouseService = new WarehouseManagerImpl_GlobalTx(new ProductDao(
+//				productDS), userTransaction);
 	}
 
 	public void configureGlobalMultipleTx() throws Throwable {
-//		warehouseService = new WarehouseManagerImpl_GlobalMultipleTx(
-//				new ProductDao(productDS), userTransaction, transactionManager);
+		warehouseService = new WarehouseManagerImpl_GlobalMultipleTx(
+				new ProductDao(productDS), userTransaction, transactionManager);
 	}
 
 	private Customer getCustomer() {
@@ -133,15 +133,15 @@ public class RunnerWarehouseGlobal {
 	}
 
 	public void test() throws Throwable {
-		new GlobalTx().makeCommit(); /* ok */
-		new GlobalTx().makeExOnDecrease(); /* will rollback all */
-		new GlobalTx().makeExOnLogging(); /* will rollback all */
+//		new GlobalTx().makeCommit(); /* ok */
+//		new GlobalTx().makeExOnDecrease(); /* will rollback all */
+//		new GlobalTx().makeExOnLogging(); /* will rollback all */
 
-		// new GlobalMultipleTx().makeCommit(); /* ok */
-		// new GlobalMultipleTx().makeExOnDecrease(); /* will rollback all
-		// beside logging*/
-		// new GlobalMultipleTx().makeExOnLogging(); /* will rollback only audit
-		// */
+		new GlobalMultipleTx().makeCommit(); /* ok */
+		new GlobalMultipleTx().makeExOnDecrease(); /* will rollback all
+		beside logging*/
+		new GlobalMultipleTx().makeExOnLogging(); /* will rollback only audit
+		*/
 	}
 
 	public void runSimultaneousThreads(int workerThreadsAmount,
