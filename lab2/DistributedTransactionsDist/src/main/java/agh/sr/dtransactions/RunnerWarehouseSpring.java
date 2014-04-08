@@ -187,8 +187,8 @@ public class RunnerWarehouseSpring {
 
 	public void test() throws Throwable {
 //		testSpring_Local_Badly();
-//		testSpring_Local();
-		testSpring_Global();
+		testSpring_Local();
+//		testSpring_Global();
 	}
 
 	public void runSimultaneousThreads(int workerThreadsAmount,
@@ -241,6 +241,6 @@ public class RunnerWarehouseSpring {
 		RunnerWarehouseSpring runner = new RunnerWarehouseSpring();
 		runner.test();
 //		runner.measureLocal(10, 500);
-		runner.measureGlobal(10, 500);
+//		runner.measureGlobal(10, 500);
 	}
 }

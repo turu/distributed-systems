@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff301dcd-a155-4c05-a896-986c81af56e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_SpringMultipleTx.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/DBTxConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/DBTxConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/RunnerWarehouseSpring.java" afterPath="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/RunnerWarehouseSpring.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../db-hibernate-tutorial/.idea/libraries/Maven__postgresql_postgresql_9_1_901_1_jdbc4.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DistributedTransactionsDist.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1396022342190" ignored="false" />
+    <file path="/Dummy.txt" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1396339481555" ignored="false" />
     <file path="/fragment.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1396023724234" ignored="false" />
     <file path="/WarehouseManagerImpl_LocalTx.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1395745631338" ignored="false" />
     <file path="/WarehouseManagerImpl_LocalSavepointsTX.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1395745668730" ignored="false" />
@@ -18,6 +16,12 @@
     <file path="/WarehouseManagerImpl_GlobalMultipleTx.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1396020388225" ignored="false" />
     <file path="/WarehouseManagerImpl_SpringTX.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1396022014840" ignored="false" />
     <file path="/WarehouseManagerImpl_SpringMultipleTx.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1396024348857" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../enroll-me/enroll-me-thesis/enrollme/src/main/java/pl/agh/enrollme/backingbeans/subjectselection/SubjectChooser.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1396339481647" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../enroll-me/enroll-me-thesis/enrollme/src/main/java/pl/agh/enrollme/backingbeans/preferenceslookup/PreferencesLookupUserService.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1396339481647" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../enroll-me/enroll-me-thesis/enrollme/src/main/java/pl/agh/enrollme/service/newservices/EnrollMeUserService.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1396339481647" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../enroll-me/enroll-me-thesis/enrollme/src/main/java/pl/agh/enrollme/service/newservices/GroupService.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1396339481647" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../enroll-me/enroll-me-thesis/enrollme/src/main/java/pl/agh/enrollme/service/newservices/DeletingEnrollmentStrategyImpl.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1396339481647" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../enroll-me/enroll-me-thesis/enrollme/src/main/java/pl/agh/enrollme/service/newservices/SubjectService.java" changelist="ff301dcd-a155-4c05-a896-986c81af56e0" time="1396339481647" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +36,7 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -68,7 +73,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -91,9 +95,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_SpringMultipleTx.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="73" column="40" selection-start="2928" selection-end="2928" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,17 +105,52 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="10" column="42" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="imports" expanded="true" />
                 <marker date="1396022014658" expanded="true" signature="646:757" placeholder="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RunnerWarehouseSpring.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="RunnerWarehouseSpring.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/RunnerWarehouseSpring.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="219" column="33" selection-start="6309" selection-end="6309" vertical-scroll-proportion="0.3844156">
+            <state line="39" column="24" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="192.168.253.11.tm5.epoch" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/192.168.253.11.tm5.epoch">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DistributedTransactionsDist.iml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DistributedTransactionsDist.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="derby.log" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/derby.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TransactionAwareDataSourceProxy.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/3.1.0.M2/spring-jdbc-3.1.0.M2-sources.jar!/org/springframework/jdbc/datasource/TransactionAwareDataSourceProxy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="251" column="12" selection-start="10018" selection-end="10018" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -132,26 +169,6 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/DBTxConfiguration.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="266" column="0" selection-start="8437" selection-end="8437" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WarehouseManagerImpl_GlobalTx.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_GlobalTx.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="54" selection-start="1612" selection-end="1612" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RunnerWarehouseGlobal.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/RunnerWarehouseGlobal.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="31" selection-start="2012" selection-end="2012" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -189,8 +206,8 @@
         <option value="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_SpringTx.java" />
         <option value="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_SpringMultipleTx.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/RunnerWarehouseSpring.java" />
         <option value="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/DBTxConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/RunnerWarehouseSpring.java" />
       </list>
     </option>
   </component>
@@ -207,8 +224,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
     <option name="y" value="27" />
-    <option name="width" value="1922" />
-    <option name="height" value="1174" />
+    <option name="width" value="1368" />
+    <option name="height" value="742" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -238,7 +255,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -340,6 +356,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -356,9 +373,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -446,19 +463,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -485,6 +489,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -609,42 +626,46 @@
       <created>1396022348122</created>
       <updated>1396022348122</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="lab2 zad8&#10;">
+      <created>1396024967449</created>
+      <updated>1396024967449</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="27" width="1922" height="1174" extended-state="6" />
+    <frame x="-1" y="27" width="1368" height="742" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Log4jMonitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5170758" sideWeight="0.81996083" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18003914" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297456" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Metrics" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Metrics" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Log4jMonitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293919" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.36666667" sideWeight="0.6706081" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3105691" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297456" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -690,7 +711,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab2 zad7&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab2 zad8&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -713,6 +734,7 @@
     <MESSAGE value="lab2 zad5" />
     <MESSAGE value="lab2 zad6&#10;" />
     <MESSAGE value="lab2 zad7&#10;" />
+    <MESSAGE value="lab2 zad8&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -727,60 +749,25 @@
     <option name="showOnlyWarnings" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="21" selection-start="921" selection-end="921" vertical-scroll-proportion="0.046728972">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerService_ConnPassing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="17" selection-start="155" selection-end="155" vertical-scroll-proportion="0.18691589">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_LocalMultipleTx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="27" selection-start="1830" selection-end="1830" vertical-scroll-proportion="0.21929824">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_LocalSavepointsTx.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="36" selection-start="2190" selection-end="2190" vertical-scroll-proportion="1.3596492">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
+        <state line="61" column="36" selection-start="2190" selection-end="2190" vertical-scroll-proportion="1.3596492" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/dao/ProductDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="435" selection-end="435" vertical-scroll-proportion="0.046728972">
-          <folding />
-        </state>
+        <state line="15" column="13" selection-start="435" selection-end="435" vertical-scroll-proportion="0.046728972" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_GlobalMultipleTx.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="37" selection-start="2027" selection-end="2027" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="54" column="37" selection-start="2027" selection-end="2027" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_GlobalTx.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="54" selection-start="1612" selection-end="1612" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -802,7 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="42" selection-start="389" selection-end="389" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
             <marker date="1396022014658" expanded="true" signature="646:757" placeholder="{...}" />
           </folding>
         </state>
@@ -825,15 +811,27 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/orderprocessing/logic/WarehouseManagerImpl_SpringMultipleTx.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="73" column="40" selection-start="2928" selection-end="2928" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/derby.log">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/3.1.0.M2/spring-jdbc-3.1.0.M2.jar!/org/springframework/jdbc/datasource/TransactionAwareDataSourceProxy.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="11" column="11" selection-start="413" selection-end="413" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/3.1.0.M2/spring-jdbc-3.1.0.M2-sources.jar!/org/springframework/jdbc/datasource/TransactionAwareDataSourceProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="251" column="12" selection-start="10018" selection-end="10018" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/RunnerWarehouseSpring.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="24" selection-start="1282" selection-end="1282" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -845,9 +843,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/agh/sr/dtransactions/RunnerWarehouseSpring.java">
+    <entry file="file://$PROJECT_DIR$/DistributedTransactionsDist.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="219" column="33" selection-start="6309" selection-end="6309" vertical-scroll-proportion="0.3844156">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/derby.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
