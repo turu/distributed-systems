@@ -1,10 +1,13 @@
 package agh.sr.rmi.noteboard.client;
 
-import java.rmi.Naming;
-
+import agh.sr.rmi.noteboard.api.Noteboard;
+import agh.sr.rmi.noteboard.api.NoteboardListener;
+import agh.sr.rmi.noteboard.api.UserToken;
+import agh.sr.rmi.noteboard.client.core.NoteboardListenerImpl;
 import org.apache.log4j.Logger;
 
-import agh.sr.rmi.noteboard.api.Noteboard;
+import java.rmi.Naming;
+import java.rmi.server.UnicastRemoteObject;
 
 
 public class NoteboardClient {
@@ -23,12 +26,19 @@ public class NoteboardClient {
 			Noteboard noteboard = (Noteboard) Naming
 					.lookup(RMI_REGISTRY_ADDRESS + "/" + NOTEBOARD_REMOTE_OBJECT_NAME);
 			logger.debug("Mam referencje do obiektu zdalnego!");
-			
+
+            NoteboardListener impl = new NoteboardListenerImpl();
+            NoteboardListener listener = (NoteboardListener) UnicastRemoteObject.exportObject(impl, 0);
+
+            final String name = args[0];
+
+            UserToken token = noteboard.register(name, listener);
+
 			// 2. Wolamy metody zdalne
-			noteboard.appendText("Hej!");
-			noteboard.appendText("Ho!");
+			noteboard.appendText(token, "Hej!");
+			noteboard.appendText(token, "Ho!");
 			
-			System.out.println("Aktualna zawartosc tablicy: " + noteboard.getText());
+			System.out.println("Aktualna zawartosc tablicy: " + noteboard.getText(token));
 			
 		} catch (Exception e) {
 			logger.error(e);
