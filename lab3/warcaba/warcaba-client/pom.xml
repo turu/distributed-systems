@@ -11,5 +11,13 @@
 
     <artifactId>warcaba-client</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>pl.edu.agh.turek.rozprochy</groupId>
+            <artifactId>warcaba-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 
 </project>
