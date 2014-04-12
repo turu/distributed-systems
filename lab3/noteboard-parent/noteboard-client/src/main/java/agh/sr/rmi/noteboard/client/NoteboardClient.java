@@ -22,6 +22,10 @@ public class NoteboardClient {
 	public static void main(String[] args) {
 
 		try {
+            if(System.getSecurityManager() == null) {
+                System.setSecurityManager(new SecurityManager());
+            }
+
 			// 1. Odszukujemy referencje do obiektu zdalnego - odpytujemy rejestr pod wskazanym adresem
 			Noteboard noteboard = (Noteboard) Naming
 					.lookup(RMI_REGISTRY_ADDRESS + "/" + NOTEBOARD_REMOTE_OBJECT_NAME);
@@ -39,6 +43,8 @@ public class NoteboardClient {
 			noteboard.appendText(token, "Ho!");
 			
 			System.out.println("Aktualna zawartosc tablicy: " + noteboard.getText(token));
+
+            noteboard.unregister(token);
 			
 		} catch (Exception e) {
 			logger.error(e);

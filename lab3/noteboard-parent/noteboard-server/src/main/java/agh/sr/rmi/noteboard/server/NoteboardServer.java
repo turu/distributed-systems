@@ -1,14 +1,13 @@
 package agh.sr.rmi.noteboard.server;
 
+import agh.sr.rmi.noteboard.api.Noteboard;
+import agh.sr.rmi.noteboard.server.core.NoteboardImpl;
+import org.apache.log4j.Logger;
+
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
-
-import org.apache.log4j.Logger;
-
-import agh.sr.rmi.noteboard.api.Noteboard;
-import agh.sr.rmi.noteboard.server.core.NoteboardImpl;
 
 public class NoteboardServer {
 
@@ -22,6 +21,10 @@ public class NoteboardServer {
 	public static void main(String[] args) {
 
 		try {
+
+            if(System.getSecurityManager() == null) {
+                System.setSecurityManager(new SecurityManager());
+            }
 
 			// 1. Stworzmy nasz obiekt zdalny
 			NoteboardImpl impl = new NoteboardImpl();

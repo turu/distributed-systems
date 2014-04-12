@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/warcaba.iml" filepath="$PROJECT_DIR$/warcaba.iml" />
+      <module fileurl="file://$PROJECT_DIR$/warcaba-api/warcaba-api.iml" filepath="$PROJECT_DIR$/warcaba-api/warcaba-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/warcaba-client/warcaba-client.iml" filepath="$PROJECT_DIR$/warcaba-client/warcaba-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/warcaba-server/warcaba-server.iml" filepath="$PROJECT_DIR$/warcaba-server/warcaba-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/warcaba-server-shared/warcaba-server-shared.iml" filepath="$PROJECT_DIR$/warcaba-server-shared/warcaba-server-shared.iml" />
+    </modules>
+  </component>
+</project>
+
