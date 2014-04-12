@@ -4,6 +4,7 @@ import org.apache.commons.cli.*;
 import org.slf4j.Logger;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -24,13 +25,13 @@ public abstract class AbstractWarcabaRunner {
         return true;
     }
 
-    protected Map<String, String> getAdditionalProperties(CommandLine commandLine) {
+    protected Map<String, String> getAdditionalProperties(CommandLine commandLine, Map<String, String> propMap) {
         return Collections.emptyMap();
     }
 
     public void run(String[] args) {
-        prepareSecurityContext();
         prepareExecution(args);
+        prepareSecurityContext();
         final Logger logger = getLogger();
         logger.info("Runner execution begins");
         doRun();
@@ -98,7 +99,8 @@ public abstract class AbstractWarcabaRunner {
         System.setProperty("warcaba.server.ip", serverIP);
         System.setProperty("warcaba.server.port", String.valueOf(serverPort));
         System.setProperty("java.rmi.server.hostname", serverIP);
-        final Map<String, String> additionalProperties = getAdditionalProperties(commandLine);
+        final Map<String, String> additionalProperties = new HashMap<String, String>();
+        getAdditionalProperties(commandLine, additionalProperties);
         for (Map.Entry<String, String> entry : additionalProperties.entrySet()) {
             System.setProperty(entry.getKey(), entry.getValue());
         }

@@ -9,7 +9,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import pl.edu.agh.turek.rozprochy.warcaba.commons.runner.AbstractWarcabaRunner;
 
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -52,9 +51,9 @@ public class ClientRunner extends AbstractWarcabaRunner {
     }
 
     @Override
-    protected Map<String, String> getAdditionalProperties(CommandLine commandLine) {
-        final Map<String, String> propMap = new HashMap<String, String>();
+    protected Map<String, String> getAdditionalProperties(CommandLine commandLine, Map<String, String> propMap) {
         propMap.put("warcaba.client.nick", commandLine.getOptionValue("nick"));
+        propMap.put("java.security.policy", "/client.policy");
         return propMap;
     }
 
