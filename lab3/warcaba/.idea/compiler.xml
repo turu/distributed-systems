@@ -24,10 +24,19 @@
         <processorPath useClasspath="true" />
         <module name="warcaba-api" />
         <module name="warcaba-client" />
+        <module name="warcaba-commons" />
         <module name="warcaba-server" />
         <module name="warcaba-server-shared" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="warcaba" target="1.7" />
+      <module name="warcaba-api" target="1.7" />
+      <module name="warcaba-client" target="1.7" />
+      <module name="warcaba-commons" target="1.7" />
+      <module name="warcaba-server" target="1.7" />
+      <module name="warcaba-server-shared" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
 

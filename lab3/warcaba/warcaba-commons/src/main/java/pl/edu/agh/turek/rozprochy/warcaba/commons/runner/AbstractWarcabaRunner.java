@@ -1,4 +1,4 @@
-package pl.edu.agh.turek.rozprochy.warcaba.api.runner;
+package pl.edu.agh.turek.rozprochy.warcaba.commons.runner;
 
 import org.apache.commons.cli.*;
 import org.slf4j.Logger;
@@ -29,8 +29,20 @@ public abstract class AbstractWarcabaRunner {
     }
 
     public void run(String[] args) {
+        prepareSecurityContext();
         prepareExecution(args);
+        final Logger logger = getLogger();
+        logger.info("Runner execution begins");
         doRun();
+        logger.info("Runner execution ended");
+    }
+
+    private void prepareSecurityContext() {
+        if(System.getSecurityManager() == null) {
+            System.setSecurityManager(new SecurityManager());
+        }
+        final Logger logger = getLogger();
+        logger.info("Security context has been setup");
     }
 
     private void prepareExecution(String[] args) {

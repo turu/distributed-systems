@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import pl.edu.agh.turek.rozprochy.warcaba.api.runner.AbstractWarcabaRunner;
+import pl.edu.agh.turek.rozprochy.warcaba.commons.runner.AbstractWarcabaRunner;
 
 /**
  * Author: Piotr Turek
