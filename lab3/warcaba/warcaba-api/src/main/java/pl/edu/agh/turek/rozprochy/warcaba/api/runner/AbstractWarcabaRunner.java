@@ -3,23 +3,30 @@ package pl.edu.agh.turek.rozprochy.warcaba.api.runner;
 import org.apache.commons.cli.*;
 import org.slf4j.Logger;
 
+import java.util.Collections;
 import java.util.Map;
 
 /**
  * Author: Piotr Turek
  */
 public abstract class AbstractWarcabaRunner {
+    protected abstract void doRun();
+
     protected abstract String getRunnerName();
 
     protected abstract Logger getLogger();
 
-    protected abstract Option[] buildAdditionalOptions();
+    protected Option[] buildAdditionalOptions() {
+        return new Option[0];
+    }
 
-    protected abstract boolean validateArguments(CommandLine commandLine);
+    protected boolean validateAdditionalArguments(CommandLine commandLine) {
+        return true;
+    }
 
-    protected abstract Map<String, String> getAdditionalProperties(CommandLine commandLine);
-
-    protected abstract void doRun();
+    protected Map<String, String> getAdditionalProperties(CommandLine commandLine) {
+        return Collections.emptyMap();
+    }
 
     public void run(String[] args) {
         prepareExecution(args);
@@ -30,11 +37,19 @@ public abstract class AbstractWarcabaRunner {
         final Options options = buildOptions();
         final HelpFormatter helpFormatter = new HelpFormatter();
         final CommandLine commandLine = parseCommandLine(args, options, helpFormatter);
-        if (!validateArguments(commandLine)) {
+        if (!validateCommandLine(commandLine)) {
             helpFormatter.printHelp(getRunnerName(), options);
             System.exit(-1);
         }
         argsToSystemProperties(commandLine);
+    }
+
+    private boolean validateCommandLine(CommandLine commandLine) {
+        return validateArguments(commandLine) && validateAdditionalArguments(commandLine);
+    }
+
+    private boolean validateArguments(CommandLine commandLine) {
+        return commandLine.hasOption("server_ip") && commandLine.hasOption("server_port");
     }
 
     private CommandLine parseCommandLine(String[] args, Options options, HelpFormatter helpFormatter) {
