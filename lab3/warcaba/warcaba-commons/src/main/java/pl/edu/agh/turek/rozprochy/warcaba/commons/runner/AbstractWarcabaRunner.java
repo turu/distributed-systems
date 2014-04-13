@@ -105,9 +105,9 @@ public abstract class AbstractWarcabaRunner {
 
     private void argsToSystemProperties(CommandLine commandLine) {
         final String serverIP = commandLine.getOptionValue("server_ip");
-        final Integer serverPort = (Integer) commandLine.getOptionObject("server_port");
+        final String serverPort = commandLine.getOptionValue("server_port");
         System.setProperty("warcaba.server.ip", serverIP);
-        System.setProperty("warcaba.server.port", String.valueOf(serverPort));
+        System.setProperty("warcaba.server.port", serverPort);
         System.setProperty("java.rmi.server.hostname", serverIP);
         final Map<String, String> additionalProperties = new HashMap<String, String>();
         getAdditionalProperties(commandLine, additionalProperties);

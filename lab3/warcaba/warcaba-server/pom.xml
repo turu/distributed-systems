@@ -23,16 +23,19 @@
             <groupId>pl.edu.agh.turek.rozprochy</groupId>
             <artifactId>warcaba-api</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>pl.edu.agh.turek.rozprochy</groupId>
             <artifactId>warcaba-server-shared</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>pl.edu.agh.turek.rozprochy</groupId>
             <artifactId>warcaba-commons</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
@@ -71,7 +74,7 @@
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
             <version>1.1.1</version>
-            <scope>runtime</scope>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>

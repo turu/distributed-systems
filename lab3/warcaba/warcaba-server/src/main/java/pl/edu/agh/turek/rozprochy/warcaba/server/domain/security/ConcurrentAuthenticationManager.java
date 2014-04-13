@@ -1,5 +1,6 @@
 package pl.edu.agh.turek.rozprochy.warcaba.server.domain.security;
 
+import org.slf4j.LoggerFactory;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarPlayerToken;
 import pl.edu.agh.turek.rozprochy.warcaba.server.domain.IWarAuthenticationManager;
 
@@ -10,6 +11,8 @@ import java.util.concurrent.ConcurrentMap;
  * Author: Piotr Turek
  */
 public class ConcurrentAuthenticationManager implements IWarAuthenticationManager {
+    private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(ConcurrentAuthenticationManager.class);
+
     private final ConcurrentMap<String, IWarPlayerToken> playerMap = new ConcurrentHashMap<>();
 
     @Override
@@ -32,6 +35,7 @@ public class ConcurrentAuthenticationManager implements IWarAuthenticationManage
             throw new IllegalArgumentException("Player already registered: " + token);
         }
         playerMap.put(token.name(), token);
+        LOG.info("Player {} registered in the system", token);
     }
 
     @Override

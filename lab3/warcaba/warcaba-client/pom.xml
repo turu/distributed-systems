@@ -29,6 +29,11 @@
             <artifactId>warcaba-commons</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!--<dependency>-->
+        <!--<groupId>pl.edu.agh.turek.rozprochy</groupId>-->
+        <!--<artifactId>warcaba-server</artifactId>-->
+        <!--<version>1.0-SNAPSHOT</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>org.springframework</groupId>

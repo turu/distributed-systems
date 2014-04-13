@@ -1,5 +1,6 @@
 package pl.edu.agh.turek.rozprochy.warcaba.server.domain;
 
+import org.slf4j.LoggerFactory;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.IWarManager;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.exceptions.PlayerAlreadyExistsException;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.exceptions.WarAuthenticationException;
@@ -20,6 +21,8 @@ import java.rmi.RemoteException;
  * Author: Piotr Turek
  */
 public class ConcurrentWarManager implements IWarManager {
+    private static final org.slf4j.Logger LOG = LoggerFactory.getLogger(ConcurrentWarManager.class);
+
     private IWarAuthenticationManager authenticationManager;
     private IPairingManager pairingManager;
     private IGameFactory gameFactory;
@@ -52,9 +55,11 @@ public class ConcurrentWarManager implements IWarManager {
 
     @Override
     public IWarPlayerToken register(String nick) throws RemoteException, WarGameException {
+        LOG.info("Received register request for nick {}", nick);
         BasicWarPlayerToken token;
         synchronized (this) {
             if (authenticationManager.isRegistered(nick)) {
+                LOG.info("Player of nick {} already exists", nick);
                 throw new PlayerAlreadyExistsException("Player of a nick " + nick + " already exists");
             }
             token = new BasicWarPlayerToken(nick);

@@ -28,6 +28,7 @@ public class TokenFactory {
         int retryCount = 0;
         IWarPlayerToken token = null;
         Scanner scanner = new Scanner(System.in);
+        LOG.info("Creating user token for {}", name);
         while (token == null && retryCount < maxRetries) {
             try {
                 token = warManager.register(name);

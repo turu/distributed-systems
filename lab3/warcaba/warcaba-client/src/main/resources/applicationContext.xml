@@ -22,7 +22,7 @@
     </bean>
 
     <bean id="waitingRoomResolver" class="pl.edu.agh.turek.rozprochy.warcaba.client.communication.WaitingRoomResolver">
-    <constructor-arg ref="rmiResolver"/>
+        <constructor-arg ref="rmiResolver"/>
     </bean>
 
     <bean id="gameResolver" class="pl.edu.agh.turek.rozprochy.warcaba.client.communication.WarGameResolver">
