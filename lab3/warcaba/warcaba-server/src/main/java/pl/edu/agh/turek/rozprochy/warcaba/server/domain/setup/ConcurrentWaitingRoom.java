@@ -39,6 +39,7 @@ public class ConcurrentWaitingRoom implements IWaitingRoom {
     @Override
     public List<IWarPlayerToken> waitingPlayers() throws RemoteException {
         final Set<IWarPlayerToken> waitingPlayerTokens = waitingPlayers.keySet();
+        LOG.info("List of players requested");
         return new LinkedList<>(waitingPlayerTokens);
     }
 
@@ -50,6 +51,7 @@ public class ConcurrentWaitingRoom implements IWaitingRoom {
         enemy = retrieveEnemyPlayer(enemyToken);
         final IGameRequest request = new BasicGameRequest(playerToken, enemyToken);
         pairingManager.registerPair(request, new BasicPlayerPair(player, enemy));
+        enemy.onGameRequested(request);
         return request;
     }
 
@@ -57,11 +59,13 @@ public class ConcurrentWaitingRoom implements IWaitingRoom {
     public void join(IWarPlayer player) throws RemoteException, WaitingRoomException {
         IWarPlayerToken token = tryRetrievePlayerToken(player);
         authenticate(token);
+        LOG.info("Player {} joins waiting room", token);
         waitingPlayers.putIfAbsent(token, player);
     }
 
     private void authenticate(IWarPlayerToken token) throws WaitingRoomException {
         if (!authenticationManager.authenticate(token)) {
+            LOG.info("Player {} could not be authenticated!", token);
             throw new WaitingRoomException(new WarAuthenticationException("Player could not be authenticated"));
         }
     }

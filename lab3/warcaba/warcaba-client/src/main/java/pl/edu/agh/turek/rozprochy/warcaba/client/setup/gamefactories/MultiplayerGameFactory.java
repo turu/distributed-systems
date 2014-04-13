@@ -73,7 +73,7 @@ public class MultiplayerGameFactory implements IGameFactory {
     private IGameRequest getGameRequest(Scanner scanner) throws RemoteException, WaitingRoomException {
         System.out.println(">>> Type 'c' to choose an enemy or 'w' to join waiting room");
         final String decision = scanner.next();
-        if (decision.toLowerCase().equals("c")) {
+        if (decision.toLowerCase().trim().equals("c")) {
             return tryChooseEnemy(scanner);
         } else {
             return waitForEnemy();
@@ -82,6 +82,7 @@ public class MultiplayerGameFactory implements IGameFactory {
 
     private IGameRequest waitForEnemy() throws RemoteException, WaitingRoomException {
         waitingRoom.join(me);
+        LOG.info("Entered waiting room. Waiting for game request");
         return me.waitForGameRequest();
     }
 
@@ -93,6 +94,7 @@ public class MultiplayerGameFactory implements IGameFactory {
             final int id = scanner.nextInt();
             return tryGetEnemyFromList(scanner, players, id);
         } else {
+            System.out.println("There aren't any players waiting ;(");
             return getGameRequest(scanner);
         }
     }

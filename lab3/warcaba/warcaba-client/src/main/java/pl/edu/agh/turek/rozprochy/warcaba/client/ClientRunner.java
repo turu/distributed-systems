@@ -52,7 +52,7 @@ public class ClientRunner extends AbstractWarcabaRunner {
 
     private IGameFactory resolveGameFactory(ApplicationContext ctx, String decision) {
         IGameFactory gameFactory;
-        if (decision.toLowerCase().equals("m")) {
+        if (decision.toLowerCase().trim().equals("m")) {
             gameFactory = (IGameFactory) ctx.getBean("multiplayerGameFactory");
         } else {
             gameFactory = (IGameFactory) ctx.getBean("singleplayerGameFactory");

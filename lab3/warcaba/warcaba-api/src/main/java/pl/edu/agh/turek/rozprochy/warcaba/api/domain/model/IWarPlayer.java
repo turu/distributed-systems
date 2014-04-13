@@ -12,4 +12,6 @@ public interface IWarPlayer extends Remote {
     IWarPlayerToken getToken() throws RemoteException;
 
     IGameRequest waitForGameRequest() throws RemoteException;
+
+    void onGameRequested(IGameRequest request) throws RemoteException;
 }
