@@ -3,4 +3,39 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:client.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="rmiRegistry" class="org.springframework.remoting.rmi.RmiRegistryFactoryBean">
+        <property name="host" value="${warcaba.server.ip}"/>
+        <property name="port" value="${warcaba.server.port}"/>
+    </bean>
+
+    <bean id="rmiResolver" class="pl.edu.agh.turek.rozprochy.warcaba.client.communitation.RmiResolver">
+        <constructor-arg index="0" ref="rmiRegistry"/>
+        <constructor-arg index="1" value="${rmi.lookup.retries}"/>
+    </bean>
+
+    <bean id="waitingRoomResolver" class="pl.edu.agh.turek.rozprochy.warcaba.client.communitation.WaitingRoomResolver">
+        <constructor-arg ref="rmiResolver"/>
+    </bean>
+
+    <bean id="waitingRoom" factory-bean="waitingRoomResolver" factory-method="resolve">
+        <constructor-arg index="0" value="${waiting.room.name}"/>
+    </bean>
+
+    <bean id="multiplayerGameFactory"
+          class="pl.edu.agh.turek.rozprochy.warcaba.client.setup.gamefactories.MultiplayerGameFactory">
+        <constructor-arg index="0" ref="waitingRoom"/>
+        <constructor-arg index="1" ref=""/>
+        <constructor-arg index="2" ref=""/>
+        <constructor-arg index="3" value=""/>
+        <constructor-arg index="4" ref=""/>
+    </bean>
+
 </beans>
