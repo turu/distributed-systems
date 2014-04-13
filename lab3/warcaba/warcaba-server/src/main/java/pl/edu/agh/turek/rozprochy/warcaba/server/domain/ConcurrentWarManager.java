@@ -6,7 +6,6 @@ import pl.edu.agh.turek.rozprochy.warcaba.api.domain.exceptions.PlayerAlreadyExi
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.exceptions.WarAuthenticationException;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.exceptions.WarGameException;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.IWarGame;
-import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IPlayerPair;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarGameToken;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarPlayerToken;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.setup.IGameRequest;
@@ -38,8 +37,9 @@ public class ConcurrentWarManager implements IWarManager {
 
     @Override
     public IWarGameToken getGame(IGameRequest request) throws RemoteException, WarGameException {
-        IPlayerPair playerPair = getPairForRequest(request);
-        final IWarGameToken gameToken = new BasicWarGameToken(playerPair);
+        LOG.info("Requesting game for request {}", request);
+        validatePairForRequest(request);
+        final IWarGameToken gameToken = new BasicWarGameToken(request);
         createGameIfNeeded(gameToken);
         return gameToken;
     }
@@ -54,10 +54,8 @@ public class ConcurrentWarManager implements IWarManager {
         }
     }
 
-    private IPlayerPair getPairForRequest(IGameRequest request) throws GameRequestException {
-        if (pairingManager.hasPairForRequest(request)) {
-            return pairingManager.pairForRequest(request);
-        } else {
+    private void validatePairForRequest(IGameRequest request) throws GameRequestException {
+        if (!pairingManager.hasPairForRequest(request)) {
             throw new GameRequestException("Game request could not be fulfilled");
         }
     }

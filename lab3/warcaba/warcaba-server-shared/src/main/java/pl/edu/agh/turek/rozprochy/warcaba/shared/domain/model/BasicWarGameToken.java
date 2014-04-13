@@ -1,8 +1,10 @@
 package pl.edu.agh.turek.rozprochy.warcaba.shared.domain.model;
 
-import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IPlayerPair;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarGameToken;
+import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarPlayerToken;
+import pl.edu.agh.turek.rozprochy.warcaba.api.domain.setup.IGameRequest;
 
+import java.util.Arrays;
 import java.util.UUID;
 
 /**
@@ -12,10 +14,12 @@ public class BasicWarGameToken implements IWarGameToken {
     private static final long serialVersionUID = 9079360689907877374L;
 
     private final UUID id = UUID.randomUUID();
-    private final IPlayerPair players;
+    private final IWarPlayerToken[] players;
+    private final IGameRequest request;
 
-    public BasicWarGameToken(IPlayerPair players) {
-        this.players = players;
+    public BasicWarGameToken(IGameRequest request) {
+        this.request = request;
+        players = new IWarPlayerToken[]{request.requesting(), request.requested()};
     }
 
     @Override
@@ -24,8 +28,13 @@ public class BasicWarGameToken implements IWarGameToken {
     }
 
     @Override
-    public IPlayerPair players() {
-        return players;
+    public IWarPlayerToken[] players() {
+        return Arrays.copyOf(players, 2);
+    }
+
+    @Override
+    public IGameRequest gameRequest() {
+        return request;
     }
 
     @Override
@@ -36,7 +45,7 @@ public class BasicWarGameToken implements IWarGameToken {
         BasicWarGameToken that = (BasicWarGameToken) o;
 
         if (!id.equals(that.id)) return false;
-        if (!players.equals(that.players)) return false;
+        if (!request.equals(that.request)) return false;
 
         return true;
     }
@@ -44,7 +53,7 @@ public class BasicWarGameToken implements IWarGameToken {
     @Override
     public int hashCode() {
         int result = id.hashCode();
-        result = 31 * result + players.hashCode();
+        result = 31 * result + request.hashCode();
         return result;
     }
 
@@ -52,7 +61,7 @@ public class BasicWarGameToken implements IWarGameToken {
     public String toString() {
         return "BasicWarGameToken{" +
                 "id=" + id +
-                ", players=" + players +
+                ", request=" + request +
                 '}';
     }
 }

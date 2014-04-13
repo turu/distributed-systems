@@ -10,4 +10,8 @@ import java.rmi.RemoteException;
  */
 public interface IWarGame extends Remote {
     IWarGameToken getToken() throws RemoteException;
+
+    GameStatus getGameStatus() throws RemoteException;
+
+    boolean isFinished() throws RemoteException;
 }
