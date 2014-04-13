@@ -3,4 +3,45 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:server.properties</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="pairingManager" class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.setup.ConcurrentPairingManager"/>
+
+    <bean id="authenticationManager"
+          class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.security.ConcurrentAuthenticationManager"/>
+
+    <bean id="waitingRoom" class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.setup.ConcurrentWaitingRoom">
+        <constructor-arg index="0" ref="pairingManager"/>
+        <constructor-arg index="1" ref="authenticationManager"/>
+    </bean>
+
+    <bean id="warManager" class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.ConcurrentWarManager">
+        <constructor-arg index="0" ref="authenticationManager"/>
+        <constructor-arg index="1" ref="pairingManager"/>
+    </bean>
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <property name="registryHost" value="${warcaba.server.ip}"/>
+        <property name="registryPort" value="${warcaba.server.port}"/>
+        <property name="servicePort" value="${war.manager.port}"/>
+        <property name="service" ref="warManager"/>
+        <property name="serviceInterface" value="pl.edu.agh.turek.rozprochy.warcaba.api.domain.IWarManager"/>
+        <property name="serviceName" value="${war.manager.name}"/>
+    </bean>
+
+    <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
+        <property name="registryHost" value="${warcaba.server.ip}"/>
+        <property name="registryPort" value="${warcaba.server.port}"/>
+        <property name="servicePort" value="${waiting.room.port}"/>
+        <property name="service" ref="waitingRoom"/>
+        <property name="serviceInterface" value="pl.edu.agh.turek.rozprochy.warcaba.api.domain.setup.IWaitingRoom"/>
+        <property name="serviceName" value="${waiting.room.name}"/>
+    </bean>
+
 </beans>

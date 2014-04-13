@@ -46,4 +46,12 @@ public class BasicWarPlayerToken implements IWarPlayerToken {
         result = 31 * result + name.hashCode();
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "BasicWarPlayerToken{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

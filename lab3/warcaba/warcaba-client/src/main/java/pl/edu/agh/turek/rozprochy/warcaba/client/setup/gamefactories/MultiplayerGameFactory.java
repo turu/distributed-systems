@@ -4,12 +4,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.BeanCreationException;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.IWarManager;
+import pl.edu.agh.turek.rozprochy.warcaba.api.domain.exceptions.WarGameException;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.IWarGame;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarGameToken;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarPlayer;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarPlayerToken;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.setup.IGameRequest;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.setup.IWaitingRoom;
+import pl.edu.agh.turek.rozprochy.warcaba.api.domain.setup.exceptions.EnemyAbsentException;
+import pl.edu.agh.turek.rozprochy.warcaba.api.domain.setup.exceptions.WaitingRoomException;
 import pl.edu.agh.turek.rozprochy.warcaba.client.communication.WarGameResolver;
 import pl.edu.agh.turek.rozprochy.warcaba.client.setup.IGameFactory;
 
@@ -49,7 +52,13 @@ public class MultiplayerGameFactory implements IGameFactory {
                 IGameRequest request = getGameRequest(scanner);
                 gameToken = warManager.getGame(request);
             } catch (RemoteException e) {
-                LOG.warn("Communication error, retry count={}", retryCount, e);
+                LOG.warn("Communication error while creating game, retry count={}", retryCount, e);
+            } catch (EnemyAbsentException e) {
+                LOG.warn("Selected enemy was absent at the time of request");
+            } catch (WaitingRoomException e) {
+                LOG.warn("Details of the problem: ", e);
+            } catch (WarGameException e) {
+                LOG.warn("Game could not be created", e);
             } finally {
                 retryCount++;
             }
@@ -61,7 +70,7 @@ public class MultiplayerGameFactory implements IGameFactory {
         throw new BeanCreationException("Could not retrieved game token from the server!");
     }
 
-    private IGameRequest getGameRequest(Scanner scanner) throws RemoteException {
+    private IGameRequest getGameRequest(Scanner scanner) throws RemoteException, WaitingRoomException {
         System.out.println(">>> Type 'c' to choose an enemy or 'w' to join waiting room");
         final String decision = scanner.next();
         if (decision.toLowerCase().equals("c")) {
@@ -71,12 +80,12 @@ public class MultiplayerGameFactory implements IGameFactory {
         }
     }
 
-    private IGameRequest waitForEnemy() throws RemoteException {
+    private IGameRequest waitForEnemy() throws RemoteException, WaitingRoomException {
         waitingRoom.join(me);
         return me.waitForGameRequest();
     }
 
-    private IGameRequest tryChooseEnemy(Scanner scanner) throws RemoteException {
+    private IGameRequest tryChooseEnemy(Scanner scanner) throws RemoteException, WaitingRoomException {
         final List<IWarPlayerToken> players = waitingRoom.waitingPlayers();
         if (!players.isEmpty()) {
             displayWaitingPlayers(players);
@@ -88,7 +97,8 @@ public class MultiplayerGameFactory implements IGameFactory {
         }
     }
 
-    private IGameRequest tryGetEnemyFromList(Scanner scanner, List<IWarPlayerToken> players, int id) throws RemoteException {
+    private IGameRequest tryGetEnemyFromList(Scanner scanner, List<IWarPlayerToken> players, int id)
+            throws RemoteException, WaitingRoomException {
         if (id >= 0 && id < players.size()) {
             final IWarPlayerToken enemy = players.get(id);
             LOG.info("Enemy {} chosen", enemy);

@@ -1,9 +1,8 @@
 package pl.edu.agh.turek.rozprochy.warcaba.shared.domain.model;
 
+import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IPlayerPair;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarGameToken;
-import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarPlayerToken;
 
-import java.util.Arrays;
 import java.util.UUID;
 
 /**
@@ -13,9 +12,9 @@ public class BasicWarGameToken implements IWarGameToken {
     private static final long serialVersionUID = 9079360689907877374L;
 
     private final UUID id = UUID.randomUUID();
-    private final IWarPlayerToken[] players;
+    private final IPlayerPair players;
 
-    public BasicWarGameToken(IWarPlayerToken[] players) {
+    public BasicWarGameToken(IPlayerPair players) {
         this.players = players;
     }
 
@@ -25,7 +24,7 @@ public class BasicWarGameToken implements IWarGameToken {
     }
 
     @Override
-    public IWarPlayerToken[] players() {
+    public IPlayerPair players() {
         return players;
     }
 
@@ -37,7 +36,7 @@ public class BasicWarGameToken implements IWarGameToken {
         BasicWarGameToken that = (BasicWarGameToken) o;
 
         if (!id.equals(that.id)) return false;
-        if (!Arrays.equals(players, that.players)) return false;
+        if (!players.equals(that.players)) return false;
 
         return true;
     }
@@ -45,7 +44,15 @@ public class BasicWarGameToken implements IWarGameToken {
     @Override
     public int hashCode() {
         int result = id.hashCode();
-        result = 31 * result + Arrays.hashCode(players);
+        result = 31 * result + players.hashCode();
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "BasicWarGameToken{" +
+                "id=" + id +
+                ", players=" + players +
+                '}';
     }
 }
