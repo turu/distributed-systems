@@ -19,6 +19,7 @@ import pl.edu.agh.turek.rozprochy.warcaba.client.setup.IGameFactory;
 import java.rmi.RemoteException;
 import java.util.Collection;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
@@ -59,6 +60,8 @@ public class MultiplayerGameFactory implements IGameFactory {
                 LOG.warn("Details of the problem: ", e);
             } catch (WarGameException e) {
                 LOG.warn("Game could not be created", e);
+            } catch (NoSuchElementException e) {
+                LOG.trace("Suppressed exception from scanner");
             } finally {
                 retryCount++;
             }

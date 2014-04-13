@@ -31,14 +31,25 @@ public class ClientRunner extends AbstractWarcabaRunner {
 
     @Override
     protected void doRun() {
-        final ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
-        ctx.registerShutdownHook();
         Scanner scanner = new Scanner(System.in);
+        try {
+            buildAndRun(scanner);
+        } catch (Exception e) {
+            LOG.info("Suppressed exception and exiting cleanly. Details: {}", e.getMessage());
+            LOG.trace("Details: ", e);
+        }
+        LOG.info("Exiting now...");
+
+    }
+
+    private void buildAndRun(Scanner scanner) {
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ctx.registerShutdownHook();
         do {
             runOneGame(ctx, scanner);
             LOG.info("Game has finished");
         } while (keepPlaying(scanner));
-        LOG.info("Exiting now...");
+        ctx.close();
     }
 
     private void runOneGame(ApplicationContext ctx, Scanner scanner) {
@@ -47,6 +58,9 @@ public class ClientRunner extends AbstractWarcabaRunner {
         final String decision = scanner.next();
         gameFactory = resolveGameFactory(ctx, decision);
         final IWarGame game = gameFactory.create();
+        if (game == null) {
+            System.exit(0);
+        }
         final IGameRunner gameRunner = (IGameRunner) ctx.getBean("gameRunner");
         gameRunner.play(game);
     }

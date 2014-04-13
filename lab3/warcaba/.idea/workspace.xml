@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d5b25aa-cbdd-4f4b-a1ac-9d463f4947b2" name="Default" comment="Asynchronous blocking player init">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/SimpleCheckersGame.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/gamefactories/BasicGameFactory.java" afterPath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/gamefactories/SimpleCheckersGameFactory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/control/BasicGameRegistry.java" afterPath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/control/BasicGameRegistry.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/setup/BasicGameRequest.java" afterPath="$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/setup/BasicGameRequest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/model/BasicPlayerPair.java" afterPath="$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/model/BasicPlayerPair.java" />
+    <list default="true" id="1d5b25aa-cbdd-4f4b-a1ac-9d463f4947b2" name="Default" comment="Added shutdown hooks for contexts, fixed requests, checkers init">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-commons/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/commons/runner/AbstractWarcabaRunner.java" afterPath="$PROJECT_DIR$/warcaba-commons/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/commons/runner/AbstractWarcabaRunner.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/ClientRunner.java" afterPath="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/ClientRunner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/security/ConcurrentAuthenticationManager.java" afterPath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/security/ConcurrentAuthenticationManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/ConcurrentWarManager.java" afterPath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/ConcurrentWarManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/IGameRegistry.java" afterPath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/IGameRegistry.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IPlayerPair.java" afterPath="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IPlayerPair.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/instrumentation/aop/RmiPublishingAspect.java" afterPath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/instrumentation/aop/RmiPublishingAspect.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/ServerRunner.java" afterPath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/ServerRunner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server/src/main/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/warcaba-server/src/main/resources/applicationContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/ConcurrentWaitingRoom.java" afterPath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/ConcurrentWaitingRoom.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/setup/gamefactories/MultiplayerGameFactory.java" afterPath="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/setup/gamefactories/MultiplayerGameFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/domain/model/ServerAwareWarPlayer.java" afterPath="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/domain/model/ServerAwareWarPlayer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server/pom.xml" afterPath="$PROJECT_DIR$/warcaba-server/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../noteboard-parent/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../noteboard-parent/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -42,8 +35,8 @@
       <file leaf-file-name="ClientRunner.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/ClientRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="316" max-vertical-offset="1584">
-              <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1836">
+              <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -52,8 +45,8 @@
       <file leaf-file-name="ServerAwareWarPlayer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/domain/model/ServerAwareWarPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="1080">
-              <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="384" max-vertical-offset="1134">
+              <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -61,85 +54,83 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IWarGame.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/IWarGame.java">
+      <file leaf-file-name="AbstractWarcabaRunner.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/warcaba-commons/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/commons/runner/AbstractWarcabaRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
-              <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="2070">
+              <caret line="38" column="37" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleCheckersGame.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ServerRunner.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/ServerRunner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="230" max-vertical-offset="936">
+              <caret line="31" column="33" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleCheckersGame.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/SimpleCheckersGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4383954" vertical-offset="0" max-vertical-offset="698">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
               <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleCheckersGameFactory.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/gamefactories/SimpleCheckersGameFactory.java">
+      <file leaf-file-name="MultiplayerGameFactory.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/setup/gamefactories/MultiplayerGameFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-              <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="49" max-vertical-offset="1980">
+              <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IPlayerPair.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IPlayerPair.java">
+      <file leaf-file-name="ConcurrentWarManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/ConcurrentWarManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
-              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1404">
+              <caret line="17" column="52" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IWarPlayer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IWarPlayer.java">
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/warcaba-server/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-              <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="2520">
+              <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IWarPlayerToken.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IWarPlayerToken.java">
+      <file leaf-file-name="ConcurrentWaitingRoom.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/ConcurrentWaitingRoom.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
-              <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.36827195" vertical-offset="100" max-vertical-offset="1872">
+              <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicPlayerPair.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/model/BasicPlayerPair.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1278">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1678#1679#0" expanded="true" />
-                <element signature="e#1719#1720#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="applicationContext.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/resources/applicationContext.xml">
+        <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/resources/applicationContext.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="575" max-vertical-offset="1260">
-              <caret line="43" column="48" selection-start-line="43" selection-start-column="48" selection-end-line="43" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="566" max-vertical-offset="1566">
+              <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -187,28 +178,28 @@
         <option value="$PROJECT_DIR$/warcaba-client/src/main/resources/applicationContext.xml" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/export/IWarManagerEx.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/export/CustomRmiServiceExporter.java" />
-        <option value="$PROJECT_DIR$/warcaba-server/pom.xml" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/resources/applicationContext.xml" />
         <option value="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/setup/TokenFactory.java" />
-        <option value="$PROJECT_DIR$/warcaba-commons/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/commons/runner/AbstractWarcabaRunner.java" />
-        <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/ConcurrentWaitingRoom.java" />
         <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IWarPlayer.java" />
-        <option value="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/domain/model/ServerAwareWarPlayer.java" />
         <option value="$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/setup/BasicGameRequest.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/IGameRegistry.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/ConcurrentWarManager.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/control/BasicGameRegistry.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/instrumentation/aop/RmiPublishingAspect.java" />
         <option value="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/domain/games/factories/gamefactories/MultiplayerGameFactory.java" />
-        <option value="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/setup/gamefactories/MultiplayerGameFactory.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/security/ConcurrentAuthenticationManager.java" />
-        <option value="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/ClientRunner.java" />
-        <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/ServerRunner.java" />
         <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IPlayerPair.java" />
         <option value="$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/model/BasicPlayerPair.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/SimpleCheckersGame.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/gamefactories/BasicGameFactory.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/gamefactories/SimpleCheckersGameFactory.java" />
+        <option value="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/setup/gamefactories/MultiplayerGameFactory.java" />
+        <option value="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/domain/model/ServerAwareWarPlayer.java" />
+        <option value="$PROJECT_DIR$/warcaba-commons/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/commons/runner/AbstractWarcabaRunner.java" />
+        <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/ServerRunner.java" />
+        <option value="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/ClientRunner.java" />
+        <option value="$PROJECT_DIR$/warcaba-server/pom.xml" />
+        <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/ConcurrentWaitingRoom.java" />
       </list>
     </option>
   </component>
@@ -974,7 +965,7 @@
       <recent name="$PROJECT_DIR$/warcaba-server/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WarcabaClient (1)">
+  <component name="RunManager" selected="Application.WarcabaServer">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -1284,7 +1275,7 @@
       <workItem from="1397318693085" duration="742000" />
       <workItem from="1397319437306" duration="1871000" />
       <workItem from="1397321311562" duration="53000" />
-      <workItem from="1397321367448" duration="59749000" />
+      <workItem from="1397321367448" duration="62910000" />
     </task>
     <task id="LOCAL-00001" summary="module dependencies set">
       <created>1397312992407</created>
@@ -1358,11 +1349,15 @@
       <created>1397419403780</created>
       <updated>1397419403780</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Added shutdown hooks for contexts, fixed requests, checkers init">
+      <created>1397423949160</created>
+      <updated>1397423949160</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68993000" />
+    <option name="totallyTimeSpent" value="72154000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1922" height="1174" extended-state="6" />
@@ -1382,7 +1377,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Log4jMonitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2401491" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28530535" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27767175" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1437,7 +1432,8 @@
     <MESSAGE value="Server&lt;-&gt;Client handshake is rather close to working" />
     <MESSAGE value="Server&lt;-&gt;Client handshake working. Now onto game creation" />
     <MESSAGE value="Asynchronous blocking player init" />
-    <option name="LAST_COMMIT_MESSAGE" value="Asynchronous blocking player init" />
+    <MESSAGE value="Added shutdown hooks for contexts, fixed requests, checkers init" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added shutdown hooks for contexts, fixed requests, checkers init" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1454,16 +1450,6 @@
     <option name="showOnlyWarnings" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/IGameFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/communication/WarGameResolver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3502994" vertical-offset="0" max-vertical-offset="668">
@@ -1617,21 +1603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1566">
-          <caret line="48" column="94" selection-start-line="48" selection-start-column="94" selection-end-line="48" selection-end-column="94" />
-          <folding>
-            <element signature="e#976#999#0" expanded="true" />
-            <element signature="e#1489#1511#0" expanded="true" />
-            <element signature="e#1844#1865#0" expanded="true" />
-            <element signature="e#2064#2091#0" expanded="true" />
-            <element signature="e#2816#2836#0" expanded="true" />
-            <element signature="e#3197#3220#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/IWarManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
@@ -1648,26 +1619,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/warcaba-server/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4062186" vertical-offset="74" max-vertical-offset="2430">
-          <caret line="82" column="26" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/warcaba-client/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.47642928" vertical-offset="173" max-vertical-offset="2106">
           <caret line="36" column="25" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warcaba-commons/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/commons/runner/AbstractWarcabaRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="2088">
-          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
           <folding />
         </state>
       </provider>
@@ -1736,26 +1691,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/setup/gamefactories/MultiplayerGameFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="333" max-vertical-offset="1944">
-          <caret line="52" column="43" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/ConcurrentPairingManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1062">
           <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/ConcurrentWaitingRoom.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="302" max-vertical-offset="1710">
-          <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1778,14 +1717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/ConcurrentWarManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="727" max-vertical-offset="1404">
-          <caret line="84" column="32" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/3.2.3.RELEASE/spring-context-3.2.3.RELEASE-sources.jar!/org/springframework/context/support/ClassPathXmlApplicationContext.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334" vertical-offset="351" max-vertical-offset="3276">
@@ -1802,38 +1733,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/ServerRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="936">
-          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/IWarGame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
           <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/domain/model/ServerAwareWarPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="1080">
-          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/ClientRunner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="316" max-vertical-offset="1584">
-          <caret line="34" column="26" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1890,10 +1793,94 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///opt/jdk1.7.0_25/src.zip!/java/lang/RuntimeException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33286119" vertical-offset="107" max-vertical-offset="1692">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/domain/model/ServerAwareWarPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="384" max-vertical-offset="1134">
+          <caret line="55" column="38" selection-start-line="55" selection-start-column="38" selection-end-line="55" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="566" max-vertical-offset="1566">
+          <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/ClientRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="1836">
+          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-server/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="2520">
+          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/ConcurrentWarManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1404">
+          <caret line="17" column="52" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/setup/gamefactories/MultiplayerGameFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="49" max-vertical-offset="1980">
+          <caret line="40" column="25" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/SimpleCheckersGame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4383954" vertical-offset="0" max-vertical-offset="698">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
           <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/ServerRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="230" max-vertical-offset="936">
+          <caret line="31" column="33" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-commons/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/commons/runner/AbstractWarcabaRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="22" max-vertical-offset="2070">
+          <caret line="38" column="37" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/ConcurrentWaitingRoom.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36827195" vertical-offset="100" max-vertical-offset="1872">
+          <caret line="39" column="62" selection-start-line="39" selection-start-column="62" selection-end-line="39" selection-end-column="62" />
           <folding />
         </state>
       </provider>

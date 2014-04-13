@@ -53,6 +53,7 @@ public class ServerAwareWarPlayer implements IWarPlayer {
     }
 
     private void preDestroy() throws RemoteException, WarGameException {
+        LOG.info("Unregister myself");
         warManager.unregister(token);
     }
 }

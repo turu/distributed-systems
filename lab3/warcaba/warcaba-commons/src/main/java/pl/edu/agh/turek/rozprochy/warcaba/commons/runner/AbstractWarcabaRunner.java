@@ -37,7 +37,6 @@ public abstract class AbstractWarcabaRunner {
         final Logger logger = getLogger();
         logger.info("Runner execution begins");
         doRun();
-        logger.info("Runner execution ended");
     }
 
     private void prepareSecurityContext() {

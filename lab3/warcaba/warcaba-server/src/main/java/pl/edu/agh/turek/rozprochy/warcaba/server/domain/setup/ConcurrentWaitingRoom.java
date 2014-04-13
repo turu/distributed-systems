@@ -38,9 +38,18 @@ public class ConcurrentWaitingRoom implements IWaitingRoom {
 
     @Override
     public List<IWarPlayerToken> waitingPlayers() throws RemoteException {
+        filterOutDeadPlayers();
         final Set<IWarPlayerToken> waitingPlayerTokens = waitingPlayers.keySet();
         LOG.info("List of players requested");
         return new LinkedList<>(waitingPlayerTokens);
+    }
+
+    private void filterOutDeadPlayers() {
+        for (IWarPlayerToken waiting : waitingPlayers.keySet()) {
+            if (!authenticationManager.authenticate(waiting)) {
+                waitingPlayers.remove(waiting);
+            }
+        }
     }
 
     @Override
