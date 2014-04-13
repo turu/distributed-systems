@@ -63,11 +63,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NoteboardClient.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="NoteboardClient.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/noteboard-client/src/main/java/agh/sr/rmi/noteboard/client/NoteboardClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1008">
-              <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.57424444" vertical-offset="49" max-vertical-offset="1026">
+              <caret line="34" column="90" selection-start-line="34" selection-start-column="90" selection-end-line="34" selection-end-column="90" />
               <folding />
             </state>
           </provider>
@@ -123,11 +123,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoteboardServer.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="NoteboardServer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/noteboard-server/src/main/java/agh/sr/rmi/noteboard/server/NoteboardServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.74022067" vertical-offset="108" max-vertical-offset="1170">
-              <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="1170">
+              <caret line="36" column="71" selection-start-line="36" selection-start-column="71" selection-end-line="36" selection-end-column="71" />
               <folding />
             </state>
           </provider>
@@ -172,10 +172,10 @@
         <option value="$PROJECT_DIR$/noteboard-server/src/main/java/agh/sr/rmi/noteboard/server/core/UserNotRegisteredException.java" />
         <option value="$PROJECT_DIR$/noteboard-server/src/main/java/agh/sr/rmi/noteboard/server/core/UserTokenImpl.java" />
         <option value="$PROJECT_DIR$/noteboard-api/src/main/java/agh/sr/rmi/noteboard/api/Noteboard.java" />
-        <option value="$PROJECT_DIR$/noteboard-client/src/main/java/agh/sr/rmi/noteboard/client/NoteboardClient.java" />
         <option value="$PROJECT_DIR$/noteboard-client/src/main/java/agh/sr/rmi/noteboard/client/core/NoteboardListenerImpl.java" />
         <option value="$PROJECT_DIR$/noteboard-server/src/main/java/agh/sr/rmi/noteboard/server/core/NoteboardImpl.java" />
         <option value="$PROJECT_DIR$/noteboard-server/src/main/java/agh/sr/rmi/noteboard/server/NoteboardServer.java" />
+        <option value="$PROJECT_DIR$/noteboard-client/src/main/java/agh/sr/rmi/noteboard/client/NoteboardClient.java" />
       </list>
     </option>
   </component>
@@ -683,7 +683,7 @@
       <recent name="agh.sr.rmi.noteboard.api" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.NoteboardServer">
+  <component name="RunManager" selected="Application.NoteboardClient">
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="" />
       <setting name="vmparams" value="" />
@@ -1033,12 +1033,12 @@
       <workItem from="1396948993828" duration="5189000" />
       <workItem from="1397216500403" duration="4096000" />
       <workItem from="1397307367377" duration="84000" />
-      <workItem from="1397307465711" duration="19142000" />
+      <workItem from="1397307465711" duration="22083000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28511000" />
+    <option name="totallyTimeSpent" value="31452000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1922" height="1174" extended-state="6" />
@@ -1057,7 +1057,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Log4jMonitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24973376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4408397" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22519083" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1533,18 +1533,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/noteboard-client/src/main/java/agh/sr/rmi/noteboard/client/NoteboardClient.java">
+    <entry file="jar:///opt/jdk1.7.0_25/src.zip!/java/rmi/server/UnicastRemoteObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1008">
-          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="3632" max-vertical-offset="5148">
+          <caret line="251" column="24" selection-start-line="251" selection-start-column="24" selection-end-line="251" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/noteboard-server/src/main/java/agh/sr/rmi/noteboard/server/NoteboardServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74022067" vertical-offset="108" max-vertical-offset="1170">
-          <caret line="54" column="21" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="1170">
+          <caret line="36" column="71" selection-start-line="36" selection-start-column="71" selection-end-line="36" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/noteboard-client/src/main/java/agh/sr/rmi/noteboard/client/NoteboardClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.57424444" vertical-offset="49" max-vertical-offset="1026">
+          <caret line="34" column="90" selection-start-line="34" selection-start-column="90" selection-end-line="34" selection-end-column="90" />
           <folding />
         </state>
       </provider>

@@ -1,4 +1,4 @@
-package pl.edu.agh.turek.rozprochy.warcaba.client.ui;
+package pl.edu.agh.turek.rozprochy.warcaba.client.flow;
 
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.IWarGame;
 

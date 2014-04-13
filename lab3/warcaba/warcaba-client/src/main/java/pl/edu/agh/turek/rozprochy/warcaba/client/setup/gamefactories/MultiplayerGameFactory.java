@@ -2,6 +2,7 @@ package pl.edu.agh.turek.rozprochy.warcaba.client.setup.gamefactories;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.BeanCreationException;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.IWarManager;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.IWarGame;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarGameToken;
@@ -9,8 +10,8 @@ import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarPlayer;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarPlayerToken;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.setup.IGameRequest;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.setup.IWaitingRoom;
+import pl.edu.agh.turek.rozprochy.warcaba.client.communication.WarGameResolver;
 import pl.edu.agh.turek.rozprochy.warcaba.client.setup.IGameFactory;
-import pl.edu.agh.turek.rozprochy.warcaba.client.setup.IWarGameResolver;
 
 import java.rmi.RemoteException;
 import java.util.Collection;
@@ -27,10 +28,10 @@ public class MultiplayerGameFactory implements IGameFactory {
     private IWarPlayer me;
     private IWarManager warManager;
     private Integer maxRetries;
-    private IWarGameResolver gameResolver;
+    private WarGameResolver gameResolver;
 
     public MultiplayerGameFactory(IWaitingRoom waitingRoom, IWarPlayer me, IWarManager warManager, Integer maxRetries,
-                                  IWarGameResolver gameResolver) {
+                                  WarGameResolver gameResolver) {
         this.waitingRoom = waitingRoom;
         this.me = me;
         this.warManager = warManager;
@@ -53,8 +54,11 @@ public class MultiplayerGameFactory implements IGameFactory {
                 retryCount++;
             }
         }
-        LOG.info("Game token retrieved after {} tries", retryCount);
-        return gameResolver.resolve(gameToken);
+        if (gameToken != null) {
+            LOG.info("Game token retrieved after {} tries", retryCount);
+            return gameResolver.resolve(gameToken);
+        }
+        throw new BeanCreationException("Could not retrieved game token from the server!");
     }
 
     private IGameRequest getGameRequest(Scanner scanner) throws RemoteException {

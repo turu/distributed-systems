@@ -16,12 +16,16 @@
         <property name="port" value="${warcaba.server.port}"/>
     </bean>
 
-    <bean id="rmiResolver" class="pl.edu.agh.turek.rozprochy.warcaba.client.communitation.RmiResolver">
-        <constructor-arg index="0" ref="rmiRegistry"/>
+    <bean id="rmiResolver" class="pl.edu.agh.turek.rozprochy.warcaba.client.communication.RmiResolver">
+    <constructor-arg index="0" ref="rmiRegistry"/>
         <constructor-arg index="1" value="${rmi.lookup.retries}"/>
     </bean>
 
-    <bean id="waitingRoomResolver" class="pl.edu.agh.turek.rozprochy.warcaba.client.communitation.WaitingRoomResolver">
+    <bean id="waitingRoomResolver" class="pl.edu.agh.turek.rozprochy.warcaba.client.communication.WaitingRoomResolver">
+    <constructor-arg ref="rmiResolver"/>
+    </bean>
+
+    <bean id="gameResolver" class="pl.edu.agh.turek.rozprochy.warcaba.client.communication.WarGameResolver">
         <constructor-arg ref="rmiResolver"/>
     </bean>
 
@@ -29,13 +33,49 @@
         <constructor-arg index="0" value="${waiting.room.name}"/>
     </bean>
 
+    <bean id="warManagerResolver" class="pl.edu.agh.turek.rozprochy.warcaba.client.communication.WarManagerResolver">
+        <constructor-arg ref="rmiResolver"/>
+    </bean>
+
+    <bean id="warManager" factory-bean="warManagerResolver" factory-method="resolve">
+        <constructor-arg type="java.lang.String" value="${war.manager.name}"/>
+    </bean>
+
+    <bean id="tokenFactory" class="pl.edu.agh.turek.rozprochy.warcaba.client.setup.TokenFactory">
+        <constructor-arg ref="warManager"/>
+        <constructor-arg index="1" value="${token.creation.retries}"/>
+    </bean>
+
+    <bean id="playerToken" scope="prototype" factory-bean="tokenFactory" factory-method="create">
+        <constructor-arg type="java.lang.String" value="${warcaba.client.nick}"/>
+    </bean>
+
+    <bean id="warPlayerLocal" class="pl.edu.agh.turek.rozprochy.warcaba.client.domain.model.ServerAwareWarPlayer"
+          destroy-method="preDestroy">
+        <constructor-arg index="0" ref="warManager"/>
+        <constructor-arg index="1" ref="playerToken"/>
+    </bean>
+
+    <bean id="warPlayer" class="pl.edu.agh.turek.rozprochy.warcaba.client.communication.WarPlayerExporter"
+          factory-method="export">
+        <constructor-arg index="0" ref="warPlayerLocal"/>
+        <constructor-arg index="1" value="${war.player.port}"/>
+    </bean>
+
     <bean id="multiplayerGameFactory"
           class="pl.edu.agh.turek.rozprochy.warcaba.client.setup.gamefactories.MultiplayerGameFactory">
         <constructor-arg index="0" ref="waitingRoom"/>
-        <constructor-arg index="1" ref=""/>
-        <constructor-arg index="2" ref=""/>
-        <constructor-arg index="3" value=""/>
-        <constructor-arg index="4" ref=""/>
+        <constructor-arg index="1" ref="warPlayer"/>
+        <constructor-arg index="2" ref="warManager"/>
+        <constructor-arg index="3" value="${game.setup.retries}"/>
+        <constructor-arg index="4" ref="gameResolver"/>
     </bean>
+
+    <bean id="singleplayerGameFactory"
+          class="pl.edu.agh.turek.rozprochy.warcaba.client.setup.gamefactories.SinglePlayerGameFactory">
+
+    </bean>
+
+    <bean id="gameRunner" class="pl.edu.agh.turek.rozprochy.warcaba.client.flow.TuiGameRunner"/>
 
 </beans>

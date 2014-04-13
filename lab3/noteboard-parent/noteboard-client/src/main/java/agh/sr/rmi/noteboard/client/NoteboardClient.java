@@ -33,6 +33,7 @@ public class NoteboardClient {
 
             NoteboardListener impl = new NoteboardListenerImpl();
             NoteboardListener listener = (NoteboardListener) UnicastRemoteObject.exportObject(impl, 0);
+            listener.onNewText("dupakupa");
 
             final String name = args[0];
 

@@ -8,8 +8,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.IWarGame;
+import pl.edu.agh.turek.rozprochy.warcaba.client.flow.IGameRunner;
 import pl.edu.agh.turek.rozprochy.warcaba.client.setup.IGameFactory;
-import pl.edu.agh.turek.rozprochy.warcaba.client.ui.IGameRunner;
 import pl.edu.agh.turek.rozprochy.warcaba.commons.runner.AbstractWarcabaRunner;
 
 import java.util.Map;

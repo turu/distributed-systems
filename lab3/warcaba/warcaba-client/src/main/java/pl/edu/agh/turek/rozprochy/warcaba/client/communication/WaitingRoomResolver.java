@@ -1,4 +1,4 @@
-package pl.edu.agh.turek.rozprochy.warcaba.client.communitation;
+package pl.edu.agh.turek.rozprochy.warcaba.client.communication;
 
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.setup.IWaitingRoom;
 
