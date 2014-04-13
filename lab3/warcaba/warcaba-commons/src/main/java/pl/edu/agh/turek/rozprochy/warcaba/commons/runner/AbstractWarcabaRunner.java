@@ -39,11 +39,21 @@ public abstract class AbstractWarcabaRunner {
     }
 
     private void prepareSecurityContext() {
-        if(System.getSecurityManager() == null) {
-            System.setSecurityManager(new SecurityManager());
-        }
         final Logger logger = getLogger();
-        logger.info("Security context has been setup");
+        if (noSecurityManagerActive() && securityManagerRequested()) {
+            System.setSecurityManager(new SecurityManager());
+            logger.info("Security context has been setup");
+        } else {
+            logger.info("No changes made to the security context");
+        }
+    }
+
+    private boolean securityManagerRequested() {
+        return System.getProperty("java.security.policy") != null;
+    }
+
+    private boolean noSecurityManagerActive() {
+        return System.getSecurityManager() == null;
     }
 
     private void prepareExecution(String[] args) {
