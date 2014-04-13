@@ -11,6 +11,8 @@ import java.util.Map;
  * Author: Piotr Turek
  */
 public abstract class AbstractWarcabaRunner {
+    private static final String DEBUG_POLICY_LOCATION = "default.policy";
+
     protected abstract void doRun();
 
     protected abstract String getRunnerName();
@@ -40,7 +42,10 @@ public abstract class AbstractWarcabaRunner {
 
     private void prepareSecurityContext() {
         final Logger logger = getLogger();
-        if (noSecurityManagerActive() && securityManagerRequested()) {
+        if (noSecurityManagerActive()) {
+            if (!securityManagerRequested()) {
+                System.setProperty("java.security.policy", DEBUG_POLICY_LOCATION);
+            }
             System.setSecurityManager(new SecurityManager());
             logger.info("Security context has been setup");
         } else {
