@@ -4,6 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.BeanCreationException;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.IWarManager;
+import pl.edu.agh.turek.rozprochy.warcaba.api.domain.exceptions.PlayerAlreadyExistsException;
+import pl.edu.agh.turek.rozprochy.warcaba.api.domain.exceptions.WarGameException;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarPlayerToken;
 
 import java.rmi.RemoteException;
@@ -31,6 +33,11 @@ public class TokenFactory {
                 token = warManager.register(name);
             } catch (RemoteException e) {
                 LOG.error("Communication error while retrieving user token! RetryCount={}", retryCount, e);
+            } catch (PlayerAlreadyExistsException e) {
+                LOG.error("Player of a given nick already exists in the system");
+            } catch (WarGameException e) {
+                LOG.info("Details: ", e);
+            } catch (Exception e) {
                 System.out.println(">>> Enter alternative nick: ");
                 name = scanner.next();
             } finally {

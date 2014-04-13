@@ -1,5 +1,6 @@
 package pl.edu.agh.turek.rozprochy.warcaba.api.domain.model;
 
+
 import java.io.Serializable;
 import java.util.UUID;
 

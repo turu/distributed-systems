@@ -3,8 +3,8 @@ package pl.edu.agh.turek.rozprochy.warcaba.api.domain.exceptions;
 /**
  * Author: Piotr Turek
  */
-public class PlayerAlreadyExists extends WarGameException {
-    public PlayerAlreadyExists(String message) {
+public class PlayerAlreadyExistsException extends WarGameException {
+    public PlayerAlreadyExistsException(String message) {
         super(message);
     }
 }

@@ -1,6 +1,7 @@
 package pl.edu.agh.turek.rozprochy.warcaba.client.domain.model;
 
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.IWarManager;
+import pl.edu.agh.turek.rozprochy.warcaba.api.domain.exceptions.WarGameException;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarPlayer;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarPlayerToken;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.setup.IGameRequest;
@@ -29,7 +30,7 @@ public class ServerAwareWarPlayer implements IWarPlayer {
         return null;
     }
 
-    private void preDestroy() throws RemoteException {
+    private void preDestroy() throws RemoteException, WarGameException {
         warManager.unregister(token);
     }
 }

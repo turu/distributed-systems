@@ -1,7 +1,7 @@
 package pl.edu.agh.turek.rozprochy.warcaba.server.domain;
 
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.IWarManager;
-import pl.edu.agh.turek.rozprochy.warcaba.api.domain.exceptions.PlayerAlreadyExists;
+import pl.edu.agh.turek.rozprochy.warcaba.api.domain.exceptions.PlayerAlreadyExistsException;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.exceptions.WarAuthenticationException;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.exceptions.WarGameException;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.IWarGame;
@@ -55,7 +55,7 @@ public class ConcurrentWarManager implements IWarManager {
         BasicWarPlayerToken token;
         synchronized (this) {
             if (authenticationManager.isRegistered(nick)) {
-                throw new PlayerAlreadyExists("Player of a nick " + nick + " already exists");
+                throw new PlayerAlreadyExistsException("Player of a nick " + nick + " already exists");
             }
             token = new BasicWarPlayerToken(nick);
             authenticationManager.register(token);

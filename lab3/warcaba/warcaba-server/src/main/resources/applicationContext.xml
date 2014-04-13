@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="pl.edu.agh.turek.rozprochy.warcaba.server"/>
+    <aop:aspectj-autoproxy/>
 
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
@@ -11,24 +15,37 @@
         </property>
     </bean>
 
-    <bean id="pairingManager" class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.setup.ConcurrentPairingManager"/>
+    <bean id="rmiRegistry" class="org.springframework.remoting.rmi.RmiRegistryFactoryBean">
+        <property name="host" value="${warcaba.server.ip}"/>
+        <property name="port" value="${warcaba.server.port}"/>
+    </bean>
 
     <bean id="authenticationManager"
           class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.security.ConcurrentAuthenticationManager"/>
+
+    <bean id="pairingManager" class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.setup.ConcurrentPairingManager">
+        <constructor-arg ref="authenticationManager"/>
+    </bean>
 
     <bean id="waitingRoom" class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.setup.ConcurrentWaitingRoom">
         <constructor-arg index="0" ref="pairingManager"/>
         <constructor-arg index="1" ref="authenticationManager"/>
     </bean>
 
+    <bean id="gameRegistry" class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.control.BasicGameRegistry"/>
+
+    <bean id="gameFactory"
+          class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.setup.gamefactories.BasicGameFactory"/>
+
     <bean id="warManager" class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.ConcurrentWarManager">
         <constructor-arg index="0" ref="authenticationManager"/>
         <constructor-arg index="1" ref="pairingManager"/>
+        <constructor-arg index="2" ref="gameFactory"/>
+        <constructor-arg index="3" ref="gameRegistry"/>
     </bean>
 
     <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
-        <property name="registryHost" value="${warcaba.server.ip}"/>
-        <property name="registryPort" value="${warcaba.server.port}"/>
+        <property name="registry" ref="rmiRegistry"/>
         <property name="servicePort" value="${war.manager.port}"/>
         <property name="service" ref="warManager"/>
         <property name="serviceInterface" value="pl.edu.agh.turek.rozprochy.warcaba.api.domain.IWarManager"/>
@@ -36,8 +53,7 @@
     </bean>
 
     <bean class="org.springframework.remoting.rmi.RmiServiceExporter">
-        <property name="registryHost" value="${warcaba.server.ip}"/>
-        <property name="registryPort" value="${warcaba.server.port}"/>
+        <property name="registry" ref="rmiRegistry"/>
         <property name="servicePort" value="${waiting.room.port}"/>
         <property name="service" ref="waitingRoom"/>
         <property name="serviceInterface" value="pl.edu.agh.turek.rozprochy.warcaba.api.domain.setup.IWaitingRoom"/>
