@@ -57,9 +57,9 @@ public class MultiplayerGameFactory implements IGameFactory {
             } catch (EnemyAbsentException e) {
                 LOG.warn("Selected enemy was absent at the time of request");
             } catch (WaitingRoomException e) {
-                LOG.warn("Details of the problem: ", e);
+                LOG.warn("Details of the problem: {}", e.getMessage());
             } catch (WarGameException e) {
-                LOG.warn("Game could not be created", e);
+                LOG.warn("Game could not be created: {}", e.getMessage());
             } catch (NoSuchElementException e) {
                 LOG.trace("Suppressed exception from scanner");
             } finally {
@@ -116,7 +116,7 @@ public class MultiplayerGameFactory implements IGameFactory {
 
     private void displayWaitingPlayers(Collection<IWarPlayerToken> players) {
         int i = 0;
-        System.out.println("List of players awaiting a game:");
+        System.out.println(">>> List of players awaiting a game:");
         for (IWarPlayerToken player : players) {
             System.out.println(">>> " + i + ": " + player.name());
         }

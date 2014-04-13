@@ -13,6 +13,7 @@ import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarGameToken;
 import java.rmi.AlreadyBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.Registry;
+import java.rmi.server.UnicastRemoteObject;
 
 /**
  * Author: Piotr Turek
@@ -38,6 +39,7 @@ public class RmiPublishingAspect {
         IWarGameToken token = getWarGameToken(game);
         final String exportedName = token.id().toString();
         try {
+            game = (IWarGame) UnicastRemoteObject.exportObject(game, 0);
             registry.bind(exportedName, game);
             LOG.info("Game {} exported under {} name", token, exportedName);
             LOG.trace("List of active remote objects: {}", registry.list());

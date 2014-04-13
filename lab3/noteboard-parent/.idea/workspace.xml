@@ -63,10 +63,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NoteboardClient.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="NoteboardClient.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/noteboard-client/src/main/java/agh/sr/rmi/noteboard/client/NoteboardClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.15768725" vertical-offset="132" max-vertical-offset="1026">
+            <state vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="1026">
               <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
               <folding />
             </state>
@@ -133,11 +133,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NoteboardServer.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="NoteboardServer.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/noteboard-server/src/main/java/agh/sr/rmi/noteboard/server/NoteboardServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.43626806" vertical-offset="190" max-vertical-offset="1170">
+              <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -1053,12 +1053,12 @@
       <workItem from="1396948993828" duration="5189000" />
       <workItem from="1397216500403" duration="4096000" />
       <workItem from="1397307367377" duration="84000" />
-      <workItem from="1397307465711" duration="30279000" />
+      <workItem from="1397307465711" duration="30378000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39648000" />
+    <option name="totallyTimeSpent" value="39747000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1922" height="1174" extended-state="6" />
@@ -1553,14 +1553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/noteboard-server/src/main/java/agh/sr/rmi/noteboard/server/NoteboardServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1170">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/noteboard-server/src/main/java/agh/sr/rmi/noteboard/server/core/NoteboardImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1494">
@@ -1571,8 +1563,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/noteboard-client/src/main/java/agh/sr/rmi/noteboard/client/NoteboardClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15768725" vertical-offset="132" max-vertical-offset="1026">
+        <state vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="1026">
           <caret line="21" column="33" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/noteboard-server/src/main/java/agh/sr/rmi/noteboard/server/NoteboardServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43626806" vertical-offset="190" max-vertical-offset="1170">
+          <caret line="36" column="39" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
           <folding />
         </state>
       </provider>

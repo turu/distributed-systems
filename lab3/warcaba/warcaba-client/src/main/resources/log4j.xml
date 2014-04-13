@@ -35,7 +35,7 @@
 
     <!-- Application Loggers -->
     <logger name="pl.edu.agh.turek.rozprochy.warcaba">
-        <level value="info"/>
+        <level value="trace"/>
     </logger>
 
     <!-- Root Logger -->
