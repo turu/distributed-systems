@@ -44,5 +44,6 @@ public class ConcurrentAuthenticationManager implements IWarAuthenticationManage
             throw new IllegalArgumentException("Cannot unregister a player who's not registered! " + token);
         }
         playerMap.remove(token.name());
+        LOG.info("Player {} removed from the system", token);
     }
 }

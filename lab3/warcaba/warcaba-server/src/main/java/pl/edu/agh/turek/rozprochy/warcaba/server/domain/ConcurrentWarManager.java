@@ -40,9 +40,18 @@ public class ConcurrentWarManager implements IWarManager {
     public IWarGameToken getGame(IGameRequest request) throws RemoteException, WarGameException {
         IPlayerPair playerPair = getPairForRequest(request);
         final IWarGameToken gameToken = new BasicWarGameToken(playerPair);
-        final IWarGame game = gameFactory.createForToken(gameToken);
-        gameRegistry.add(gameToken, game);
+        createGameIfNeeded(gameToken);
         return gameToken;
+    }
+
+    private void createGameIfNeeded(IWarGameToken gameToken) {
+        if (!gameRegistry.hasGameFor(gameToken)) {
+            final IWarGame game = gameFactory.createForToken(gameToken);
+            gameRegistry.add(gameToken, game);
+            LOG.info("Game created and added to registry, for token {}", gameToken);
+        } else {
+            LOG.info("Game for token {} already in the registry");
+        }
     }
 
     private IPlayerPair getPairForRequest(IGameRequest request) throws GameRequestException {

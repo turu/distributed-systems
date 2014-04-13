@@ -3,6 +3,10 @@ package pl.edu.agh.turek.rozprochy.warcaba.shared.domain.model;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IPlayerPair;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarPlayer;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * Author: Piotr Turek
  */
@@ -11,10 +15,13 @@ public class BasicPlayerPair implements IPlayerPair {
 
     private final IWarPlayer player;
     private final IWarPlayer enemy;
+    private final List<IWarPlayer> players = new LinkedList<>();
 
     public BasicPlayerPair(IWarPlayer player, IWarPlayer enemy) {
         this.player = player;
         this.enemy = enemy;
+        players.add(player);
+        players.add(enemy);
     }
 
     @Override
@@ -53,5 +60,10 @@ public class BasicPlayerPair implements IPlayerPair {
                 "player=" + player +
                 ", enemy=" + enemy +
                 '}';
+    }
+
+    @Override
+    public Iterator<IWarPlayer> iterator() {
+        return players.iterator();
     }
 }

@@ -36,7 +36,7 @@
     <bean id="gameRegistry" class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.control.BasicGameRegistry"/>
 
     <bean id="gameFactory"
-          class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.setup.gamefactories.BasicGameFactory"/>
+          class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.setup.gamefactories.SimpleCheckersGameFactory"/>
 
     <bean id="warManager" class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.ConcurrentWarManager">
         <constructor-arg index="0" ref="authenticationManager"/>

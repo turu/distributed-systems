@@ -31,7 +31,8 @@ public class ClientRunner extends AbstractWarcabaRunner {
 
     @Override
     protected void doRun() {
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        final ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ctx.registerShutdownHook();
         Scanner scanner = new Scanner(System.in);
         do {
             runOneGame(ctx, scanner);

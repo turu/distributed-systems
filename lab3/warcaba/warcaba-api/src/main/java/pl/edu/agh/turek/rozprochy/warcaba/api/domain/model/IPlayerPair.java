@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Author: Piotr Turek
  */
-public interface IPlayerPair extends Serializable {
+public interface IPlayerPair extends Serializable, Iterable<IWarPlayer> {
     IWarPlayer getPlayer();
 
     IWarPlayer getEnemy();

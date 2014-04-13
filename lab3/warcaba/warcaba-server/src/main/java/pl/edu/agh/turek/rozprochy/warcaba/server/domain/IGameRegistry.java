@@ -8,4 +8,6 @@ import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarGameToken;
  */
 public interface IGameRegistry {
     void add(IWarGameToken token, IWarGame game);
+
+    boolean hasGameFor(IWarGameToken gameToken);
 }

@@ -17,4 +17,9 @@ public class BasicGameRegistry implements IGameRegistry {
     public void add(IWarGameToken token, IWarGame game) {
         activeGames.putIfAbsent(token, game);
     }
+
+    @Override
+    public boolean hasGameFor(IWarGameToken gameToken) {
+        return activeGames.containsKey(gameToken);
+    }
 }

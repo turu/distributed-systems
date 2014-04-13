@@ -2,7 +2,6 @@ package pl.edu.agh.turek.rozprochy.warcaba.server;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import pl.edu.agh.turek.rozprochy.warcaba.commons.runner.AbstractWarcabaRunner;
 
@@ -23,7 +22,8 @@ public class ServerRunner extends AbstractWarcabaRunner {
     @Override
     protected void doRun() {
         eagerlyCreateRegistry();
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        final ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ctx.registerShutdownHook();
         LOG.info("Server is up and running. Listening for clients...");
     }
 

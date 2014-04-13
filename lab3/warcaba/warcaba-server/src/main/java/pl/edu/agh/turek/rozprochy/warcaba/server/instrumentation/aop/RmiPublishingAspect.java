@@ -32,10 +32,15 @@ public class RmiPublishingAspect {
     @AfterReturning(pointcut = "execution(* create*(..))",
             returning = "game")
     public void publishRmiGame(IWarGame game) throws RemoteException {
+        if (game == null) {
+            return;
+        }
         IWarGameToken token = getWarGameToken(game);
         final String exportedName = token.id().toString();
         try {
             registry.bind(exportedName, game);
+            LOG.info("Game {} exported under {} name", token, exportedName);
+            LOG.trace("List of active remote objects: {}", registry.list());
         } catch (AlreadyBoundException e) {
             LOG.error("Game {} is published already! Aborting...", token);
         }
