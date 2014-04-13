@@ -13,12 +13,13 @@ import java.util.UUID;
 public class BasicWarGameToken implements IWarGameToken {
     private static final long serialVersionUID = 9079360689907877374L;
 
-    private final UUID id = UUID.randomUUID();
+    private final UUID id;
     private final IWarPlayerToken[] players;
     private final IGameRequest request;
 
     public BasicWarGameToken(IGameRequest request) {
         this.request = request;
+        this.id = request.id();
         players = new IWarPlayerToken[]{request.requesting(), request.requested()};
     }
 
@@ -45,16 +46,13 @@ public class BasicWarGameToken implements IWarGameToken {
         BasicWarGameToken that = (BasicWarGameToken) o;
 
         if (!id.equals(that.id)) return false;
-        if (!request.equals(that.request)) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = id.hashCode();
-        result = 31 * result + request.hashCode();
-        return result;
+        return id.hashCode();
     }
 
     @Override

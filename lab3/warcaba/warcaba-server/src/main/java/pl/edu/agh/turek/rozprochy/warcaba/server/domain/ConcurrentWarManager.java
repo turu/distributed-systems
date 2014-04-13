@@ -44,7 +44,7 @@ public class ConcurrentWarManager implements IWarManager {
         return gameToken;
     }
 
-    private void createGameIfNeeded(IWarGameToken gameToken) {
+    private synchronized void createGameIfNeeded(IWarGameToken gameToken) {
         if (!gameRegistry.hasGameFor(gameToken)) {
             final IWarGame game = gameFactory.createForToken(gameToken);
             gameRegistry.add(gameToken, game);
