@@ -21,6 +21,8 @@ import java.util.Scanner;
 public class ClientRunner extends AbstractWarcabaRunner {
 
     private static final Logger LOG = LoggerFactory.getLogger(ClientRunner.class);
+    private static final String DEBUG_SHARED_LOCATION = "/home/turu/Projects/rozprochy/assignments/lab3/warcaba/warcaba-" +
+            "server-shared/target/warcaba-server-shared-1.0-SNAPSHOT.jar";
 
     public static void main(String[] args) {
         final ClientRunner runner = new ClientRunner();
@@ -78,7 +80,9 @@ public class ClientRunner extends AbstractWarcabaRunner {
     protected Option[] buildAdditionalOptions() {
         final Option nick = OptionBuilder.withArgName("nick").withDescription("Your name").hasArg()
                 .create("nick");
-        return new Option[]{nick};
+        final Option codebase = OptionBuilder.withArgName("server_shared").withDescription("Location of codebase shared " +
+                "with server").hasArg().create("server_shared");
+        return new Option[]{nick, codebase};
     }
 
     @Override
@@ -89,6 +93,9 @@ public class ClientRunner extends AbstractWarcabaRunner {
     @Override
     protected Map<String, String> getAdditionalProperties(CommandLine commandLine, Map<String, String> propMap) {
         propMap.put("warcaba.client.nick", commandLine.getOptionValue("nick"));
+        if (commandLine.hasOption("server_shared")) {
+            propMap.put("java.rmi.server.codebase", commandLine.getOptionValue("server_shared", DEBUG_SHARED_LOCATION));
+        }
         return propMap;
     }
 
