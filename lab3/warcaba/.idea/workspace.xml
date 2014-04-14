@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d5b25aa-cbdd-4f4b-a1ac-9d463f4947b2" name="Default" comment="Happy path for multiplayer checkers is working">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/warcaba-server/src/main/resources/spring.handlers" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/ClientRunner.java" afterPath="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/ClientRunner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../noteboard-parent/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../noteboard-parent/.idea/workspace.xml" />
+    <list default="true" id="1d5b25aa-cbdd-4f4b-a1ac-9d463f4947b2" name="Default" comment="Using remote codebase by default, added spring.handlers proper contents">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="warcaba.iws" />
@@ -31,7 +28,7 @@
       <file leaf-file-name="ClientRunner.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/ClientRunner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="19" max-vertical-offset="1818">
+            <state vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="1818">
               <caret line="23" column="139" selection-start-line="23" selection-start-column="139" selection-end-line="23" selection-end-column="139" />
               <folding />
             </state>
@@ -1692,7 +1689,7 @@
       <workItem from="1397318693085" duration="742000" />
       <workItem from="1397319437306" duration="1871000" />
       <workItem from="1397321311562" duration="53000" />
-      <workItem from="1397321367448" duration="93149000" />
+      <workItem from="1397321367448" duration="93278000" />
     </task>
     <task id="LOCAL-00001" summary="module dependencies set">
       <created>1397312992407</created>
@@ -1830,11 +1827,15 @@
       <created>1397483829175</created>
       <updated>1397483829175</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Using remote codebase by default, added spring.handlers proper contents">
+      <created>1397506586931</created>
+      <updated>1397506586931</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102393000" />
+    <option name="totallyTimeSpent" value="102522000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1922" height="1174" extended-state="6" />
@@ -1853,7 +1854,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Log4jMonitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2401491" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2401491" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27767175" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="PsiViewer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1891,7 +1892,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="context is up (but security to be fixed)" />
     <MESSAGE value="Game setup init" />
     <MESSAGE value="rmi in context" />
     <MESSAGE value="multiplayer game setup implemented on client side" />
@@ -1916,7 +1916,8 @@
     <MESSAGE value="Fixed board printing, added onGameStarted action to players" />
     <MESSAGE value="Missing equals/hashcode/tostring and logging" />
     <MESSAGE value="Happy path for multiplayer checkers is working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Happy path for multiplayer checkers is working" />
+    <MESSAGE value="Using remote codebase by default, added spring.handlers proper contents" />
+    <option name="LAST_COMMIT_MESSAGE" value="Using remote codebase by default, added spring.handlers proper contents" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
