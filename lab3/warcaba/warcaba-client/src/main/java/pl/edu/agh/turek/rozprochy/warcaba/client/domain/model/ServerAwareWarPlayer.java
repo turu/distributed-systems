@@ -22,12 +22,16 @@ public class ServerAwareWarPlayer implements IWarPlayer {
 
     private final IWarManager warManager;
     private final IWarPlayerToken token;
+    private final IMoveFactory moveFactory;
+    private final IBoardPrinter boardPrinter;
 
     private final BlockingDeque<IGameRequest> gameRequests = new LinkedBlockingDeque<>();
 
-    public ServerAwareWarPlayer(IWarManager warManager, IWarPlayerToken token) {
+    public ServerAwareWarPlayer(IWarManager warManager, IWarPlayerToken token, IMoveFactory moveFactory, IBoardPrinter boardPrinter) {
         this.warManager = warManager;
         this.token = token;
+        this.moveFactory = moveFactory;
+        this.boardPrinter = boardPrinter;
     }
 
     @Override
@@ -57,7 +61,8 @@ public class ServerAwareWarPlayer implements IWarPlayer {
 
     @Override
     public IWarCommand move(IGameBoard board, IWarGameToken gameToken) throws RemoteException {
-        return null;
+        boardPrinter.print(board);
+        return moveFactory.create(board, gameToken);
     }
 
     @Override
@@ -67,17 +72,17 @@ public class ServerAwareWarPlayer implements IWarPlayer {
 
     @Override
     public void onMoveDeclined(IWarCommand move, IGameBoard board, IWarGameToken gameToken) throws RemoteException {
-        System.out.println("Your move has been denied");
+        System.out.println("Your move has been declined");
     }
 
     @Override
     public void onVictory(IGameBoard board, IWarGameToken gameToken) throws RemoteException {
-
+        System.out.println("You won!!!!oneoneone");
     }
 
     @Override
     public void onDefeat(IGameBoard board, IWarGameToken gameToken) throws RemoteException {
-
+        System.out.println("You looooose ;(((((");
     }
 
     @Override

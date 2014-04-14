@@ -46,14 +46,22 @@
         <constructor-arg index="1" value="${token.creation.retries}"/>
     </bean>
 
-    <bean id="playerToken" scope="prototype" factory-bean="tokenFactory" factory-method="create">
-        <constructor-arg type="java.lang.String" value="${warcaba.client.nick}"/>
+    <bean id="playerToken" factory-bean="tokenFactory" factory-method="create">
+    <constructor-arg type="java.lang.String" value="${warcaba.client.nick}"/>
     </bean>
+
+    <bean id="boardPrinter" class="pl.edu.agh.turek.rozprochy.warcaba.client.domain.model.TuiBoardPrinter">
+        <constructor-arg ref="playerToken"/>
+    </bean>
+
+    <bean id="moveFactory" class="pl.edu.agh.turek.rozprochy.warcaba.client.domain.model.TuiMoveFactory"/>
 
     <bean id="warPlayerLocal" class="pl.edu.agh.turek.rozprochy.warcaba.client.domain.model.ServerAwareWarPlayer"
           destroy-method="preDestroy">
         <constructor-arg index="0" ref="warManager"/>
         <constructor-arg index="1" ref="playerToken"/>
+        <constructor-arg index="2" ref="moveFactory"/>
+        <constructor-arg index="3" ref="boardPrinter"/>
     </bean>
 
     <bean id="warPlayer" class="pl.edu.agh.turek.rozprochy.warcaba.client.communication.WarPlayerExporter"
