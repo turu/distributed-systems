@@ -14,4 +14,6 @@ public interface IWarGame extends Remote {
     GameStatus getGameStatus() throws RemoteException;
 
     boolean isFinished() throws RemoteException;
+
+    void start() throws RemoteException;
 }
