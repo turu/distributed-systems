@@ -3,6 +3,9 @@ package pl.edu.agh.turek.rozprochy.warcaba.client.domain.model;
 import org.slf4j.LoggerFactory;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.IWarManager;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.exceptions.WarGameException;
+import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.command.IWarCommand;
+import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IGameBoard;
+import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarGameToken;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarPlayer;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarPlayerToken;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.setup.IGameRequest;
@@ -50,6 +53,36 @@ public class ServerAwareWarPlayer implements IWarPlayer {
         } catch (InterruptedException e) {
             LOG.warn("Player {} waiting till he can receive game request has been interrupted", token);
         }
+    }
+
+    @Override
+    public IWarCommand move(IGameBoard board, IWarGameToken gameToken) throws RemoteException {
+        return null;
+    }
+
+    @Override
+    public void onMoveAccepted(IWarCommand move, IGameBoard board, IWarGameToken gameToken) throws RemoteException {
+        System.out.println("Your move has been accepted");
+    }
+
+    @Override
+    public void onMoveDeclined(IWarCommand move, IGameBoard board, IWarGameToken gameToken) throws RemoteException {
+        System.out.println("Your move has been denied");
+    }
+
+    @Override
+    public void onVictory(IGameBoard board, IWarGameToken gameToken) throws RemoteException {
+
+    }
+
+    @Override
+    public void onDefeat(IGameBoard board, IWarGameToken gameToken) throws RemoteException {
+
+    }
+
+    @Override
+    public void onRoundFinished(IGameBoard board, IWarGameToken token) throws RemoteException {
+
     }
 
     private void preDestroy() throws RemoteException, WarGameException {

@@ -33,7 +33,7 @@ public class SimpleCheckersGameFactory implements IGameFactory {
         return new SimpleCheckersGameBuilder()
                 .setToken(gameToken)
                 .setPlayers(players)
-                .setBoard(boardFactory.create())
+                .setBoard(boardFactory.create(players))
                 .setFinishRule(finishRule)
                 .setValidationStrategy(validationStrategy)
                 .createSimpleCheckersGame();
