@@ -33,7 +33,11 @@
         <constructor-arg index="1" ref="authenticationManager"/>
     </bean>
 
-    <bean id="gameRegistry" class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.control.BasicGameRegistry"/>
+    <bean id="gameRegistry" class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.control.MonitoredGameRegistry"
+          init-method="initCompletionDaemon">
+        <constructor-arg index="0" ref="rmiRegistry"/>
+        <constructor-arg index="1" value="${game.start.delay}"/>
+    </bean>
 
     <bean id="validationStrategy"
           class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.gameplay.command.validate.AlwaysTrueValidationStrategy"/>
