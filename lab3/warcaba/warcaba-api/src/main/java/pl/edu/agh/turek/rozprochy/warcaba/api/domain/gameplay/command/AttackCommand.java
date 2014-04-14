@@ -10,18 +10,16 @@ import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IGameBoard;
 public class AttackCommand implements IWarCommand {
     private static final long serialVersionUID = 6997745219366905906L;
 
-    private final IGameBoard board;
     private final Location sourceLocation;
     private final Direction direction;
 
-    public AttackCommand(IGameBoard board, Location sourceLocation, Direction direction) {
-        this.board = board;
+    public AttackCommand(Location sourceLocation, Direction direction) {
         this.sourceLocation = sourceLocation;
         this.direction = direction;
     }
 
     @Override
-    public void execute() {
+    public void execute(IGameBoard board) {
         final Optional<IChecker> checkerOptional = board.checkerAt(sourceLocation.y(), sourceLocation.x());
         if (checkerOptional.isPresent()) {
             board.removeCheckerAt(sourceLocation.y(), sourceLocation.x());
@@ -31,10 +29,6 @@ public class AttackCommand implements IWarCommand {
             int newX = (int) (sourceLocation.x() + Math.signum(direction.xDiff()) * (Math.abs(direction.xDiff()) > 0 ? 2 : 0));
             board.addCheckerAt(newY, newX, checker);
         }
-    }
-
-    public IGameBoard getBoard() {
-        return board;
     }
 
     public Location getSourceLocation() {
@@ -53,7 +47,6 @@ public class AttackCommand implements IWarCommand {
 
         AttackCommand that = (AttackCommand) o;
 
-        if (!board.equals(that.board)) return false;
         if (!direction.equals(that.direction)) return false;
         if (!sourceLocation.equals(that.sourceLocation)) return false;
 
@@ -62,7 +55,7 @@ public class AttackCommand implements IWarCommand {
 
     @Override
     public int hashCode() {
-        int result = board.hashCode();
+        int result = 1;
         result = 31 * result + sourceLocation.hashCode();
         result = 31 * result + direction.hashCode();
         return result;

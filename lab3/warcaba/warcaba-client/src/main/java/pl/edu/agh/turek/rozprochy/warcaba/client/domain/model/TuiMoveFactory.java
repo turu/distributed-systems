@@ -25,7 +25,7 @@ public class TuiMoveFactory implements IMoveFactory {
         final int dirX = Integer.parseInt(tokens[3].trim());
         final int dirY = Integer.parseInt(tokens[4].trim());
 
-        return doCreate(board, kind, sourceX, sourceY, dirX, dirY);
+        return doCreate(kind, sourceX, sourceY, dirX, dirY);
     }
 
     private String receiveCommandLine() {
@@ -41,14 +41,14 @@ public class TuiMoveFactory implements IMoveFactory {
         return line;
     }
 
-    private IWarCommand doCreate(IGameBoard board, String kind, int sourceX, int sourceY, int dirX, int dirY) {
+    private IWarCommand doCreate(String kind, int sourceX, int sourceY, int dirX, int dirY) {
         switch (kind) {
             case "a":
-                return new AttackCommand(board, new Location(sourceX, sourceY), new Direction(dirX, dirY));
+                return new AttackCommand(new Location(sourceX, sourceY), new Direction(dirX, dirY));
             case "m":
-                return new MoveCommand(board, new Location(sourceX, sourceY), new Direction(dirX, dirY));
+                return new MoveCommand(new Location(sourceX, sourceY), new Direction(dirX, dirY));
             default:
-                return new AttackCommand(board, new Location(sourceX, sourceY), new Direction(dirX, dirY));
+                return new AttackCommand(new Location(sourceX, sourceY), new Direction(dirX, dirY));
         }
     }
 

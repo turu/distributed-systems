@@ -78,7 +78,7 @@ public class SimpleCheckersGame implements IWarGame {
         IWarPlayer activePlayer = nextPlayer();
         LOG.info("Round of player {} started", activePlayer.getToken());
         IWarCommand move = forceMove(activePlayer);
-        move.execute();
+        move.execute(board);
         notifyPlayersRoundFinished();
         if (finishRule.isGameFinished(this)) {
             gameStatus = GameStatus.FINISHED;
