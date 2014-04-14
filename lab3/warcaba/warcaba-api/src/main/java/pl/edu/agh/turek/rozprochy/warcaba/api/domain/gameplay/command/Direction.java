@@ -23,4 +23,32 @@ public class Direction implements Serializable {
     public int yDiff() {
         return yDiff;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Direction direction = (Direction) o;
+
+        if (xDiff != direction.xDiff) return false;
+        if (yDiff != direction.yDiff) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = xDiff;
+        result = 31 * result + yDiff;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Direction{" +
+                "xDiff=" + xDiff +
+                ", yDiff=" + yDiff +
+                '}';
+    }
 }

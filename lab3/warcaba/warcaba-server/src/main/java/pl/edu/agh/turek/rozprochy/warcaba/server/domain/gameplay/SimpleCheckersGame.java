@@ -1,5 +1,7 @@
 package pl.edu.agh.turek.rozprochy.warcaba.server.domain.gameplay;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.GameStatus;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.IWarGame;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.command.IWarCommand;
@@ -16,6 +18,8 @@ import java.util.Iterator;
  * Author: Piotr Turek
  */
 public class SimpleCheckersGame implements IWarGame {
+    private static final Logger LOG = LoggerFactory.getLogger(SimpleCheckersGame.class);
+
     private final IWarGameToken token;
     private final IPlayerPair players;
     private GameStatus gameStatus;
@@ -57,6 +61,7 @@ public class SimpleCheckersGame implements IWarGame {
     public void start() throws RemoteException {
         gameStatus = GameStatus.IN_PROGRESS;
         notifyPlayersGameStarted();
+        LOG.info("Game {} started and players notified", getToken().id());
         playerIterator = players.iterator();
         while (!isFinished()) {
             playRound();
@@ -71,11 +76,13 @@ public class SimpleCheckersGame implements IWarGame {
 
     private void playRound() throws RemoteException {
         IWarPlayer activePlayer = nextPlayer();
+        LOG.info("Round of player {} started", activePlayer.getToken());
         IWarCommand move = forceMove(activePlayer);
         move.execute();
         notifyPlayersRoundFinished();
         if (finishRule.isGameFinished(this)) {
             gameStatus = GameStatus.FINISHED;
+            LOG.info("Game is deemed finished!");
         }
     }
 
@@ -87,6 +94,7 @@ public class SimpleCheckersGame implements IWarGame {
             accepted = validationStrategy.apply(move, board);
             handleValidation(activePlayer, move, accepted);
         } while (!accepted);
+        LOG.info("Command {} accepted as the next move", move);
         return move;
     }
 
@@ -102,6 +110,7 @@ public class SimpleCheckersGame implements IWarGame {
         for (IWarPlayer player : players) {
             player.onRoundFinished(board, token);
         }
+        LOG.info("Players notified about round finish");
     }
 
     private void notifyPlayersGameStarted() throws RemoteException {

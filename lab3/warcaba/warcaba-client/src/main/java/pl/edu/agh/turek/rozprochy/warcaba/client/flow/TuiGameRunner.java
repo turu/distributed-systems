@@ -21,10 +21,9 @@ public class TuiGameRunner implements IGameRunner {
                 TimeUnit.SECONDS.sleep(10);
             }
         } catch (RemoteException e) {
-            LOG.error("Communication error. Game could not be started", e);
-            return;
+            LOG.trace("Game no longer available", e);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            LOG.trace("Game runner interrupted", e);
         }
     }
 }

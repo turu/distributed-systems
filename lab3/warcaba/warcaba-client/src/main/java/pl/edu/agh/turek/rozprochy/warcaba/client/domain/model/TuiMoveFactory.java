@@ -4,6 +4,7 @@ import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.command.*;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IGameBoard;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarGameToken;
 
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
@@ -11,7 +12,7 @@ import java.util.Scanner;
  */
 public class TuiMoveFactory implements IMoveFactory {
 
-    public static final String COMMAND_PATTERN = "\\s*[amAM]\\s+[0-9]+\\s+\\[0-9]+\\s+\\d+\\s+\\d+\\s*";
+    public static final String COMMAND_PATTERN = "\\s*[amAM]\\s+[0-9]+\\s+[0-9]+\\s+-?\\d+\\s+-?\\d+\\s*";
 
     @Override
     public IWarCommand create(IGameBoard board, IWarGameToken gameToken) {
@@ -29,10 +30,15 @@ public class TuiMoveFactory implements IMoveFactory {
 
     private String receiveCommandLine() {
         Scanner scanner = new Scanner(System.in);
+        String line = "";
         do {
-            displayHelp();
-        } while (!scanner.hasNext(COMMAND_PATTERN));
-        return scanner.next(COMMAND_PATTERN);
+            try {
+                displayHelp();
+                line = scanner.nextLine();
+            } catch (NoSuchElementException ignored) {
+            }
+        } while (!line.matches(COMMAND_PATTERN));
+        return line;
     }
 
     private IWarCommand doCreate(IGameBoard board, String kind, int sourceX, int sourceY, int dirX, int dirY) {

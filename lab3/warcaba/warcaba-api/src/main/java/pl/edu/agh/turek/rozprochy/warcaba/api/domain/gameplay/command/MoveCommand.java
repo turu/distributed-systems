@@ -42,4 +42,33 @@ public class MoveCommand implements IWarCommand {
         return direction;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        MoveCommand that = (MoveCommand) o;
+
+        if (!board.equals(that.board)) return false;
+        if (!direction.equals(that.direction)) return false;
+        if (!sourceLocation.equals(that.sourceLocation)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = board.hashCode();
+        result = 31 * result + sourceLocation.hashCode();
+        result = 31 * result + direction.hashCode();
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "MoveCommand{" +
+                "sourceLocation=" + sourceLocation +
+                ", direction=" + direction +
+                '}';
+    }
 }
