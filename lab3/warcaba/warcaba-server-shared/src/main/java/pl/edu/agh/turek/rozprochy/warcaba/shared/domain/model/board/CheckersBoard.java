@@ -4,6 +4,7 @@ import com.google.common.base.Optional;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IChecker;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IGameBoard;
 
+import java.io.Serializable;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -64,7 +65,9 @@ public class CheckersBoard implements IGameBoard {
         return i >= 0 && i < height && j >= 0 && j < width;
     }
 
-    private static class Location {
+    private static class Location implements Serializable {
+        private static final long serialVersionUID = -2036329706984113536L;
+
         private final int y;
         private final int x;
 

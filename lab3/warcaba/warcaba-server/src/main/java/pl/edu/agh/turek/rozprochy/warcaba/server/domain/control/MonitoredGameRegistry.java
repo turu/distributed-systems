@@ -59,6 +59,7 @@ public class MonitoredGameRegistry implements IGameRegistry {
                 return new GameTaskStats(startDate, endDate, token, game);
             }
         });
+        LOG.info("Starting game {} with delay {} sec", token.id(), gameStartDelay);
     }
 
     private boolean gameNotStartedYet(IWarGame previous) {
