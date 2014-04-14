@@ -8,6 +8,8 @@ import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IGameBoard;
  * Author: Piotr Turek
  */
 public class MoveCommand implements IWarCommand {
+    private static final long serialVersionUID = 7037390634515500079L;
+
     private final IGameBoard board;
     private final Location sourceLocation;
     private final Direction direction;

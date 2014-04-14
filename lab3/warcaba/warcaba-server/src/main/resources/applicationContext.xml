@@ -35,9 +35,22 @@
 
     <bean id="gameRegistry" class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.control.BasicGameRegistry"/>
 
+    <bean id="validationStrategy"
+          class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.gameplay.command.validate.AlwaysTrueValidationStrategy"/>
+
+    <bean id="finishRule" class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.gameplay.LastManStandingRule"/>
+
+    <bean id="boardFactory" class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.model.CheckersBoardFactory">
+        <constructor-arg index="0" value="${checkers.board.height}"/>
+        <constructor-arg index="1" value="${checkers.board.width}"/>
+    </bean>
+
     <bean id="gameFactory"
           class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.setup.gamefactories.SimpleCheckersGameFactory">
-        <constructor-arg ref="pairingManager"/>
+        <constructor-arg index="0" ref="pairingManager"/>
+        <constructor-arg index="1" ref="boardFactory"/>
+        <constructor-arg index="2" ref="finishRule"/>
+        <constructor-arg index="3" ref="validationStrategy"/>
     </bean>
 
     <bean id="warManager" class="pl.edu.agh.turek.rozprochy.warcaba.server.domain.ConcurrentWarManager">

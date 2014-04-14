@@ -39,6 +39,11 @@ public class SimpleCheckersGame implements IWarGame {
     }
 
     @Override
+    public IGameBoard getBoard() throws RemoteException {
+        return board;
+    }
+
+    @Override
     public GameStatus getGameStatus() {
         return gameStatus;
     }
@@ -56,6 +61,11 @@ public class SimpleCheckersGame implements IWarGame {
             playRound();
         }
         finalizeGame();
+    }
+
+    @Override
+    public IPlayerPair getPlayers() throws RemoteException {
+        return players;
     }
 
     private void playRound() throws RemoteException {

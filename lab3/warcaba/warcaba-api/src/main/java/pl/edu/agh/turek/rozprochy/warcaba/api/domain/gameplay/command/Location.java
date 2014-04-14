@@ -1,9 +1,13 @@
 package pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.command;
 
+import java.io.Serializable;
+
 /**
  * Author: Piotr Turek
  */
-public class Location {
+public class Location implements Serializable {
+    private static final long serialVersionUID = -8835448152457013162L;
+
     private final int x;
     private final int y;
 

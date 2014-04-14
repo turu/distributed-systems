@@ -8,5 +8,5 @@ import java.io.Serializable;
 public interface IChecker extends Serializable {
     IWarPlayerToken owner();
 
-    ICheckerType type();
+    CheckerType type();
 }
