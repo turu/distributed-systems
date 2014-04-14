@@ -24,6 +24,7 @@ public class TuiBoardPrinter implements IBoardPrinter {
         displayLegend();
         System.out.println("Board:\n------------------------------");
         displayBoard(board);
+        System.out.println("--------------------------------------");
     }
 
     private void displayBoard(IGameBoard board) {
@@ -36,8 +37,9 @@ public class TuiBoardPrinter implements IBoardPrinter {
                 if (opt.isPresent()) {
                     field = fieldByOwner(opt);
                 }
-                System.out.println(field);
+                System.out.print(field);
             }
+            System.out.println();
         }
     }
 

@@ -60,6 +60,11 @@ public class ServerAwareWarPlayer implements IWarPlayer {
     }
 
     @Override
+    public void onGameStarted(IWarGameToken warGameToken) throws RemoteException {
+        System.out.println("Game " + warGameToken.id() + " has just begun. Wait for your move...");
+    }
+
+    @Override
     public IWarCommand move(IGameBoard board, IWarGameToken gameToken) throws RemoteException {
         boardPrinter.print(board);
         return moveFactory.create(board, gameToken);
@@ -87,7 +92,9 @@ public class ServerAwareWarPlayer implements IWarPlayer {
 
     @Override
     public void onRoundFinished(IGameBoard board, IWarGameToken token) throws RemoteException {
-
+        System.out.println("Round has finished:");
+        boardPrinter.print(board);
+        System.out.println("Wait for your move...");
     }
 
     private void preDestroy() throws RemoteException, WarGameException {

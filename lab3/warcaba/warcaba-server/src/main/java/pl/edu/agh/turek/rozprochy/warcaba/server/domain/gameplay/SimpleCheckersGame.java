@@ -56,6 +56,7 @@ public class SimpleCheckersGame implements IWarGame {
     @Override
     public void start() throws RemoteException {
         gameStatus = GameStatus.IN_PROGRESS;
+        notifyPlayersGameStarted();
         playerIterator = players.iterator();
         while (!isFinished()) {
             playRound();
@@ -100,6 +101,12 @@ public class SimpleCheckersGame implements IWarGame {
     private void notifyPlayersRoundFinished() throws RemoteException {
         for (IWarPlayer player : players) {
             player.onRoundFinished(board, token);
+        }
+    }
+
+    private void notifyPlayersGameStarted() throws RemoteException {
+        for (IWarPlayer player : players) {
+            player.onGameStarted(token);
         }
     }
 

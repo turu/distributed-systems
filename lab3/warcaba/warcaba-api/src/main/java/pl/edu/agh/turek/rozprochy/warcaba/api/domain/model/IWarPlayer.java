@@ -16,6 +16,8 @@ public interface IWarPlayer extends Remote {
 
     void onGameRequested(IGameRequest request) throws RemoteException;
 
+    void onGameStarted(IWarGameToken gameToken) throws RemoteException;
+
     IWarCommand move(IGameBoard board, IWarGameToken gameToken) throws RemoteException;
 
     void onMoveAccepted(IWarCommand move, IGameBoard board, IWarGameToken gameToken) throws RemoteException;
