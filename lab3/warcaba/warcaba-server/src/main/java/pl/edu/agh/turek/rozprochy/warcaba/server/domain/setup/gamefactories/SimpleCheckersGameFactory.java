@@ -1,12 +1,12 @@
 package pl.edu.agh.turek.rozprochy.warcaba.server.domain.setup.gamefactories;
 
-import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.IFinishRule;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.IWarGame;
-import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.command.validate.IValidationStrategy;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IPlayerPair;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarGameToken;
 import pl.edu.agh.turek.rozprochy.warcaba.server.domain.IPairingManager;
+import pl.edu.agh.turek.rozprochy.warcaba.server.domain.gameplay.IFinishRule;
 import pl.edu.agh.turek.rozprochy.warcaba.server.domain.gameplay.SimpleCheckersGameBuilder;
+import pl.edu.agh.turek.rozprochy.warcaba.server.domain.gameplay.command.validate.IValidationStrategy;
 import pl.edu.agh.turek.rozprochy.warcaba.server.domain.model.IBoardFactory;
 import pl.edu.agh.turek.rozprochy.warcaba.server.domain.setup.IGameFactory;
 

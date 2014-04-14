@@ -1,14 +1,13 @@
 package pl.edu.agh.turek.rozprochy.warcaba.server.domain.gameplay;
 
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.GameStatus;
-import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.IFinishRule;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.IWarGame;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.command.IWarCommand;
-import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.command.validate.IValidationStrategy;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IGameBoard;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IPlayerPair;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarGameToken;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarPlayer;
+import pl.edu.agh.turek.rozprochy.warcaba.server.domain.gameplay.command.validate.IValidationStrategy;
 
 import java.rmi.RemoteException;
 import java.util.Iterator;
@@ -59,17 +58,17 @@ public class SimpleCheckersGame implements IWarGame {
         finalizeGame();
     }
 
-    private void playRound() {
+    private void playRound() throws RemoteException {
         IWarPlayer activePlayer = nextPlayer();
         IWarCommand move = forceMove(activePlayer);
-        move.apply(board);
+        move.execute();
         notifyPlayersRoundFinished();
         if (finishRule.isGameFinished(this)) {
             gameStatus = GameStatus.FINISHED;
         }
     }
 
-    private IWarCommand forceMove(IWarPlayer activePlayer) {
+    private IWarCommand forceMove(IWarPlayer activePlayer) throws RemoteException {
         IWarCommand move;
         boolean accepted;
         do {
@@ -80,7 +79,7 @@ public class SimpleCheckersGame implements IWarGame {
         return move;
     }
 
-    private void handleValidation(IWarPlayer activePlayer, IWarCommand move, boolean accepted) {
+    private void handleValidation(IWarPlayer activePlayer, IWarCommand move, boolean accepted) throws RemoteException {
         if (accepted) {
             activePlayer.onMoveAccepted(move, board, token);
         } else {
@@ -88,11 +87,13 @@ public class SimpleCheckersGame implements IWarGame {
         }
     }
 
-    private void notifyPlayersRoundFinished() {
-
+    private void notifyPlayersRoundFinished() throws RemoteException {
+        for (IWarPlayer player : players) {
+            player.onRoundFinished(board, token);
+        }
     }
 
-    private void finalizeGame() {
+    private void finalizeGame() throws RemoteException {
         final IWarPlayer victor = finishRule.getVictor(this);
         final IWarPlayer looser = finishRule.getLooser(this);
         victor.onVictory(board, token);

@@ -1,5 +1,6 @@
-package pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay;
+package pl.edu.agh.turek.rozprochy.warcaba.server.domain.gameplay;
 
+import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.IWarGame;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarPlayer;
 
 /**

@@ -1,4 +1,4 @@
-package pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.command.validate;
+package pl.edu.agh.turek.rozprochy.warcaba.server.domain.gameplay.command.validate;
 
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.command.IWarCommand;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IGameBoard;

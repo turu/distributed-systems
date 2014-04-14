@@ -1,10 +1,9 @@
 package pl.edu.agh.turek.rozprochy.warcaba.server.domain.gameplay;
 
-import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.IFinishRule;
-import pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.command.validate.IValidationStrategy;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IGameBoard;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IPlayerPair;
 import pl.edu.agh.turek.rozprochy.warcaba.api.domain.model.IWarGameToken;
+import pl.edu.agh.turek.rozprochy.warcaba.server.domain.gameplay.command.validate.IValidationStrategy;
 
 public class SimpleCheckersGameBuilder {
     private IWarGameToken token;

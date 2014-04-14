@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d5b25aa-cbdd-4f4b-a1ac-9d463f4947b2" name="Default" comment="Fix to game token">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/control/BasicGameRegistry.java" afterPath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/control/BasicGameRegistry.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/model/BasicWarGameToken.java" afterPath="$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/model/BasicWarGameToken.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/ConcurrentWarManager.java" afterPath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/ConcurrentWarManager.java" />
+    <list default="true" id="1d5b25aa-cbdd-4f4b-a1ac-9d463f4947b2" name="Default" comment="Checkers skeleton finished">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/model/board/CheckersBoard.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/IFinishRule.java" afterPath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/IFinishRule.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/command/validate/IValidationStrategy.java" afterPath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/command/validate/IValidationStrategy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IGameBoard.java" afterPath="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IGameBoard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/command/IWarCommand.java" afterPath="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/command/IWarCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IWarPlayer.java" afterPath="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IWarPlayer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/SimpleCheckersGame.java" afterPath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/SimpleCheckersGame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/SimpleCheckersGameBuilder.java" afterPath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/SimpleCheckersGameBuilder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/gamefactories/SimpleCheckersGameFactory.java" afterPath="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/gamefactories/SimpleCheckersGameFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="warcaba.iws" />
@@ -28,72 +34,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ClientRunner.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/ClientRunner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="213" max-vertical-offset="1836">
-              <caret line="45" column="37" selection-start-line="45" selection-start-column="37" selection-end-line="45" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TuiGameRunner.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/flow/TuiGameRunner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468">
-              <caret line="21" column="12" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConcurrentWarManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/ConcurrentWarManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="249" max-vertical-offset="1386">
-              <caret line="46" column="25" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConcurrentWaitingRoom.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/ConcurrentWaitingRoom.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="219" max-vertical-offset="1872">
-              <caret line="62" column="23" selection-start-line="62" selection-start-column="23" selection-end-line="62" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicGameRegistry.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/control/BasicGameRegistry.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
-              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IGameRegistry.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/IGameRegistry.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
-              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicWarGameToken.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BasicWarGameToken.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/model/BasicWarGameToken.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8668555" vertical-offset="0" max-vertical-offset="1152">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1152">
               <caret line="41" column="37" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
               <folding>
                 <element signature="e#936#937#0" expanded="true" />
@@ -110,27 +54,89 @@
       <file leaf-file-name="SimpleCheckersGameFactory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/gamefactories/SimpleCheckersGameFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468">
-              <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="846">
+              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
               <folding>
-                <element signature="e#748#749#0" expanded="true" />
-                <element signature="e#800#801#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SimpleCheckersGame.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CheckersBoard.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/model/board/CheckersBoard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+              <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IBoardFactory.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/model/IBoardFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+              <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SimpleCheckersGame.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/SimpleCheckersGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
-              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.025974026" vertical-offset="648" max-vertical-offset="2070">
+              <caret line="37" column="22" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
               <folding>
-                <element signature="e#936#937#0" expanded="true" />
-                <element signature="e#969#970#0" expanded="true" />
-                <element signature="e#1041#1042#0" expanded="true" />
-                <element signature="e#1097#1098#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1577#1578#0" expanded="true" />
+                <element signature="e#1605#1606#0" expanded="true" />
+                <element signature="e#1660#1661#0" expanded="true" />
+                <element signature="e#1693#1694#0" expanded="true" />
+                <element signature="e#1765#1766#0" expanded="true" />
+                <element signature="e#1821#1822#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IFinishRule.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/IFinishRule.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="378">
+              <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IWarPlayer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IWarPlayer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
+              <caret line="19" column="18" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IWarCommand.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/command/IWarCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="252">
+              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IGameBoard.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IGameBoard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -138,8 +144,8 @@
       <file leaf-file-name="IWarGame.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/IWarGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="360">
-              <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
+              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -158,13 +164,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/exceptions/WarAuthenticationException.java" />
-        <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/setup/exceptions/EnemyAbsentException.java" />
-        <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/setup/exceptions/WaitingRoomException.java" />
-        <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/exceptions/PlayerAlreadyExists.java" />
-        <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/IWarAuthenticationManager.java" />
-        <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/IWarManager.java" />
-        <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/setup/exceptions/GameRequestException.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/IWarAuthenticationManagerImpl.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/ConcurrentAuthenticationManager.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/resources/server.properties" />
@@ -181,7 +180,6 @@
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/export/IWarManagerEx.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/export/CustomRmiServiceExporter.java" />
         <option value="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/setup/TokenFactory.java" />
-        <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IWarPlayer.java" />
         <option value="$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/setup/BasicGameRequest.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/IGameRegistry.java" />
         <option value="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/domain/games/factories/gamefactories/MultiplayerGameFactory.java" />
@@ -201,14 +199,22 @@
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/instrumentation/aop/RmiPublishingAspect.java" />
         <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IWarGameToken.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/resources/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/gamefactories/SimpleCheckersGameFactory.java" />
         <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/GameStatus.java" />
-        <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/IWarGame.java" />
-        <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/SimpleCheckersGame.java" />
         <option value="$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/flow/TuiGameRunner.java" />
         <option value="$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/model/BasicWarGameToken.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/control/BasicGameRegistry.java" />
         <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/ConcurrentWarManager.java" />
+        <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/IWarGame.java" />
+        <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/IFinishRule.java" />
+        <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/model/IBoardFactory.java" />
+        <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/command/validate/IValidationStrategy.java" />
+        <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/IFinishRule.java" />
+        <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/gamefactories/SimpleCheckersGameFactory.java" />
+        <option value="$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/model/board/CheckersBoard.java" />
+        <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IGameBoard.java" />
+        <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/command/IWarCommand.java" />
+        <option value="$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IWarPlayer.java" />
+        <option value="$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/SimpleCheckersGame.java" />
       </list>
     </option>
   </component>
@@ -329,6 +335,162 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba-server-shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba-server-shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba-server-shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba-server-shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba-server-shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba-server-shared" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="board" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -602,125 +764,87 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="gameplay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gameplay" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="validate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="control" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="warcaba" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="warcaba" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="warcaba-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="warcaba" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="warcaba" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="warcaba-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="warcaba" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="warcaba" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="warcaba-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="warcaba" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="warcaba" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="warcaba-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="warcaba" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="warcaba" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="warcaba-client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -910,6 +1034,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="warcaba-api" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exceptions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -960,11 +1118,11 @@
       <recent name="pl.edu.agh.turek.rozprochy.warcaba.api.domain.model" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay" />
+      <recent name="pl.edu.agh.turek.rozprochy.warcaba.server.domain.model" />
+      <recent name="pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.command.validate" />
       <recent name="pl.edu.agh.turek.rozprochy.warcaba.server.domain.gameplay" />
-      <recent name="pl.edu.agh.turek.rozprochy.warcaba.server.domain.setup.gamefactories" />
-      <recent name="pl.edu.agh.turek.rozprochy.warcaba.server.domain.control" />
-      <recent name="pl.edu.agh.turek.rozprochy.warcaba.server.domain" />
+      <recent name="pl.edu.agh.turek.rozprochy.warcaba.api.domain.gameplay.command" />
+      <recent name="pl.edu.agh.turek.rozprochy.warcaba.api.domain.model" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="pl.edu.agh.turek.rozprochy.warcaba.client.domain.games.factories" />
@@ -1284,7 +1442,7 @@
       <workItem from="1397318693085" duration="742000" />
       <workItem from="1397319437306" duration="1871000" />
       <workItem from="1397321311562" duration="53000" />
-      <workItem from="1397321367448" duration="68034000" />
+      <workItem from="1397321367448" duration="71900000" />
     </task>
     <task id="LOCAL-00001" summary="module dependencies set">
       <created>1397312992407</created>
@@ -1374,11 +1532,19 @@
       <created>1397430221910</created>
       <updated>1397430221910</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Fixed synchronization in warManager">
+      <created>1397432164751</created>
+      <updated>1397432164751</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Checkers skeleton finished">
+      <created>1397435002857</created>
+      <updated>1397435002857</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77278000" />
+    <option name="totallyTimeSpent" value="81144000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1922" height="1174" extended-state="6" />
@@ -1411,7 +1577,7 @@
       <window_info id="Metrics" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Analysis" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24973376" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1485623" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14323749" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="true" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" x="99" y="127" width="1722" height="974" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -1457,7 +1623,9 @@
     <MESSAGE value="Cleanup started to work" />
     <MESSAGE value="Publishing aspect fix" />
     <MESSAGE value="Fix to game token" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix to game token" />
+    <MESSAGE value="Fixed synchronization in warManager" />
+    <MESSAGE value="Checkers skeleton finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Checkers skeleton finished" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1474,54 +1642,6 @@
     <option name="showOnlyWarnings" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/3.2.3.RELEASE/spring-aop-3.2.3.RELEASE.jar!/org/springframework/aop/config/spring-aop-3.2.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.839416" vertical-offset="0" max-vertical-offset="7488">
-          <caret line="70" column="23" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/3.2.3.RELEASE/spring-context-3.2.3.RELEASE-sources.jar!/org/springframework/context/annotation/EnableAspectJAutoProxy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.747851" vertical-offset="1026" max-vertical-offset="1818">
-          <caret line="104" column="10" selection-start-line="104" selection-start-column="10" selection-end-line="104" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/3.2.3.RELEASE/spring-beans-3.2.3.RELEASE-sources.jar!/org/springframework/beans/factory/support/AbstractAutowireCapableBeanFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80145985" vertical-offset="24417" max-vertical-offset="28062">
-          <caret line="1481" column="0" selection-start-line="1481" selection-start-column="0" selection-end-line="1481" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/IWarAuthenticationManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/3.2.3.RELEASE/spring-context-3.2.3.RELEASE-sources.jar!/org/springframework/remoting/rmi/RmiServiceExporter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4598854" vertical-offset="435" max-vertical-offset="7614">
-          <caret line="68" column="23" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///opt/jdk1.7.0_25/jre/lib/rt.jar!/sun/rmi/registry/RegistryImpl_Stub.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49927008" vertical-offset="0" max-vertical-offset="685">
-          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/setup/IGameRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.25787964" vertical-offset="0" max-vertical-offset="698">
@@ -1638,14 +1758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="324">
           <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IWarPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
           <folding />
         </state>
       </provider>
@@ -1822,38 +1934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/IWarGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <caret line="15" column="48" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/gamefactories/SimpleCheckersGameFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="29" selection-end-line="22" selection-end-column="29" />
-          <folding>
-            <element signature="e#748#749#0" expanded="true" />
-            <element signature="e#800#801#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/SimpleCheckersGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-          <folding>
-            <element signature="e#936#937#0" expanded="true" />
-            <element signature="e#969#970#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
-            <element signature="e#1097#1098#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/warcaba-client/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/client/ClientRunner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="213" max-vertical-offset="1836">
@@ -1904,9 +1984,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/command/validate/IValidationStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306">
+          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/IFinishRule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="378">
+          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IWarPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="576">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/command/IWarCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="252">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/model/IGameBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-api/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/api/domain/gameplay/IWarGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/model/BasicWarGameToken.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8668555" vertical-offset="0" max-vertical-offset="1152">
+        <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1152">
           <caret line="41" column="37" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
           <folding>
             <element signature="e#936#937#0" expanded="true" />
@@ -1915,6 +2045,48 @@
             <element signature="e#1069#1070#0" expanded="true" />
             <element signature="e#1401#1402#0" expanded="true" />
             <element signature="e#1437#1438#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/setup/gamefactories/SimpleCheckersGameFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="846">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-server-shared/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/shared/domain/model/board/CheckersBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/model/IBoardFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="288">
+          <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/warcaba-server/src/main/java/pl/edu/agh/turek/rozprochy/warcaba/server/domain/gameplay/SimpleCheckersGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.025974026" vertical-offset="648" max-vertical-offset="2070">
+          <caret line="37" column="22" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1577#1578#0" expanded="true" />
+            <element signature="e#1605#1606#0" expanded="true" />
+            <element signature="e#1660#1661#0" expanded="true" />
+            <element signature="e#1693#1694#0" expanded="true" />
+            <element signature="e#1765#1766#0" expanded="true" />
+            <element signature="e#1821#1822#0" expanded="true" />
           </folding>
         </state>
       </provider>
