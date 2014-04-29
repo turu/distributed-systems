@@ -1,0 +1,1 @@
+idlj.exe -fall -td ..\generated -pkgTranslate example1 edu.sr.generated.example1 sr.idl
