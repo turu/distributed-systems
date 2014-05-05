@@ -22,7 +22,7 @@ public class Client1
 		orb = ORB.init( args, null );
 
 		// get the Object Reference from IOR
-		org.omg.CORBA.Object objRef = orb.string_to_object("IOR:000000000000001449444c3a6578616d706c65312f49313a312e3000000000010000000000000086000102000000000e31302e32322e3130382e31313900dfb800000031afabcb0000000020acfd4cdd00000001000000000000000100000008526f6f74504f410000000008000000010000000014000000000000020000000100000020000000000001000100000002050100010001002000010109000000010001010000000026000000020002");
+		org.omg.CORBA.Object objRef = orb.string_to_object("IOR:000000000000001449444c3a6578616d706c65312f49313a312e3000000000010000000000000086000102000000000e31302e32322e3130382e31313900dd0400000031afabcb0000000020ad0498a000000001000000000000000100000008526f6f74504f410000000008000000010000000014000000000000020000000100000020000000000001000100000002050100010001002000010109000000010001010000000026000000020002");
 		
 		// narrow the reference
 		i1 = I1Helper.narrow(objRef);
@@ -39,9 +39,10 @@ public class Client1
 				
 		// get the reference from IOR (it points to NS Object (NS is a CORBA Object, too!)
 
-		nsRef = orb.resolve_initial_references("NameService");
-		//nsRef = orb.string_to_object("corbaloc:iiop:127.0.0.1:23232");
+//		nsRef = orb.resolve_initial_references("NameService");
+//		nsRef = orb.string_to_object("corbaloc:iiop:127.0.0.1:23232");
 		//nsRef = orb.string_to_object("IOR:000000000000002b494
+        nsRef = orb.string_to_object("IOR:000000000000002b49444c3a6f6d672e6f72672f436f734e616d696e672f4e616d696e67436f6e746578744578743a312e30000000000001000000000000009e000102000000000f3139322e3136382e3235332e313100000384000000000045afabcb0000000020000f424000000001000000000000000200000008526f6f74504f41000000000d544e616d65536572766963650000000000000008000000010000000114000000000000020000000100000020000000000001000100000002050100010001002000010109000000010001010000000026000000020002");
 
 		// narrow the reference appropriately
 		NamingContextExt ncRef = NamingContextExtHelper.narrow( nsRef );
@@ -49,7 +50,7 @@ public class Client1
 		// use the reference calling the object's operations 
 		
 		// get the Object Reference from NS
-		org.omg.CORBA.Object objRef = ncRef.resolve_str("ala i janek");
+		org.omg.CORBA.Object objRef = ncRef.resolve_str("ala i janek1");
 
 		System.out.println("OBJ= " + objRef);
 		
@@ -71,6 +72,16 @@ public class Client1
 		String res = i1.op2("zenek", text2, text3, s1);
 
 		System.out.println("I1::op2 returned: " + text2.value + " " + text3.value + " " + res);
+
+
+        S1 s2 = new S1();
+        s2.a = 2;
+        s2.b = 'c';
+        final S1Holder s1Holder = new S1Holder(s2);
+        final boolean retval = i1.doSthRandom(s1Holder);
+        System.out.println("I1::doSthRandom returned: " + retval + " " + s1Holder.toString());
+
+
 	}
 	
 	
@@ -109,10 +120,10 @@ public class Client1
 		throws InvalidName, NotFound, CannotProceed, org.omg.CORBA.ORBPackage.InvalidName 
 	{
 		Client1 c1 = new Client1();
-		c1.base1(args);
+		c1.base2(args);
 		c1.callI1();
-		//c1.callFactory();
-		//c1.callDII();
+		c1.callFactory();
+		c1.callDII();
 	}
 
 }

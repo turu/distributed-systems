@@ -1,13 +1,7 @@
 package edu.sr.server;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-
-import edu.sr.generated.example1.I1;
-import edu.sr.generated.example1.I1Helper;
+import edu.sr.impl.I1Impl;
 import org.omg.CORBA.ORB;
-import org.omg.CORBA.Policy;
 import org.omg.CORBA.ORBPackage.InvalidName;
 import org.omg.CosNaming.NameComponent;
 import org.omg.CosNaming.NamingContextExt;
@@ -22,7 +16,9 @@ import org.omg.PortableServer.POAPackage.ServantAlreadyActive;
 import org.omg.PortableServer.POAPackage.ServantNotActive;
 import org.omg.PortableServer.POAPackage.WrongPolicy;
 
-import edu.sr.impl.I1Impl;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Server {
 
@@ -87,15 +83,16 @@ public class Server {
 		org.omg.CORBA.Object nsRef = null;
 		
 		//nsRef = orb.resolve_initial_references("NameService");
-		//nsRef = orb.string_to_object("corbaloc:iiop:127.0.0.1:23232");
-		nsRef = orb.string_to_object("corbaloc:iiop:149.156.97.155:23232");
+//		nsRef = orb.string_to_object("corbaloc:iiop:127.0.0.1:23232");
+//		nsRef = orb.string_to_object("corbaloc:iiop:149.156.97.155:23232");
+        nsRef = orb.string_to_object("IOR:000000000000002b49444c3a6f6d672e6f72672f436f734e616d696e672f4e616d696e67436f6e746578744578743a312e30000000000001000000000000009e000102000000000f3139322e3136382e3235332e313100000384000000000045afabcb0000000020000f424000000001000000000000000200000008526f6f74504f41000000000d544e616d65536572766963650000000000000008000000010000000114000000000000020000000100000020000000000001000100000002050100010001002000010109000000010001010000000026000000020002");
 		
 		//narrow NS reference
 		NamingContextExt ncRef = NamingContextExtHelper.narrow( nsRef );
 
 		// bind the Object Reference in Naming
-		NameComponent path1[] = ncRef.to_name("ala_i janek1");
-		NameComponent path2[] = ncRef.to_name("ala_i janek2");
+		NameComponent path1[] = ncRef.to_name("ala i janek1");
+		NameComponent path2[] = ncRef.to_name("ala i janek2");
 
 		ncRef.rebind(path1, ref1);
 		ncRef.rebind(path2, ref2);
@@ -109,7 +106,7 @@ public class Server {
 	public static void main(String[] args) throws InvalidName, AdapterInactive, ServantNotActive, WrongPolicy, IOException, org.omg.CosNaming.NamingContextPackage.InvalidName, NotFound, CannotProceed, ServantAlreadyActive, ObjectAlreadyActive 
 	{
 		Server s = new Server();
-		s.base1(args);
+		s.base2(args);
 	}
 
 }

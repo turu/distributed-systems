@@ -20,6 +20,7 @@ module example1
     {
     	short op1(in long abc);
         string op2( in string text, inout string text2, out string text3, in S1 struct1);
+        boolean doSthRandom(inout S1 s1);
         I2 getI2();
     };
 };

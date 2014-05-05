@@ -1,14 +1,8 @@
 package edu.sr.impl;
 
-import edu.sr.generated.example1.S1;
-import edu.sr.generated.example1.I1POA;
-import edu.sr.generated.example1.I2;
-import edu.sr.generated.example1.I2Helper;
+import edu.sr.generated.example1.*;
 import org.omg.CORBA.StringHolder;
 import org.omg.PortableServer.POA;
-import org.omg.PortableServer.POAPackage.ObjectAlreadyActive;
-import org.omg.PortableServer.POAPackage.ObjectNotActive;
-import org.omg.PortableServer.POAPackage.ServantAlreadyActive;
 import org.omg.PortableServer.POAPackage.ServantNotActive;
 import org.omg.PortableServer.POAPackage.WrongPolicy;
 
@@ -54,9 +48,8 @@ public class I1Impl extends I1POA
 
 	@Override
 	public short op1(int abc) {
-		// TODO Auto-generated method stub
 		System.out.println("OP1 " + abc);
-		return 0;
+		return (short) abc;
 	}
 
 
@@ -64,8 +57,18 @@ public class I1Impl extends I1POA
 	@Override
 	public String op2(String text, StringHolder text2, StringHolder text3,
 			S1 struct1) {
-		// TODO Auto-generated method stub
-		return null;
+        text3.value = text;
+		return "ala";
 	}
+
+    @Override
+    public boolean doSthRandom(S1Holder s1) {
+        final S1 value = s1.value;
+        if (value.a < 0) {
+            return false;
+        }
+        value.a = value.a * 2 + value.b;
+        return true;
+    }
 
 }
