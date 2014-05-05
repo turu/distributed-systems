@@ -1,0 +1,168 @@
+module model
+{
+    module exceptions {
+        exception NoSuchFigurePresentException {};
+        exception CommandExecutionException {};
+        exception RoomEnteringException {};
+        exception NoSuchPlayerInTheRoomException {};
+    };
+
+    module figures {
+        enum FigureType {CIRCLE, RECTANGLE, LINE};
+
+        struct FigureToken
+        {
+            string uuid;
+            FigureType type;
+        };
+
+        struct Point
+        {
+            long x;
+            long y;
+        };
+
+        interface MyFigure
+        {
+            readonly attribute FigureToken token;
+
+            Point getStartPoint();
+
+            Point getEndPoint();
+        };
+
+        interface MyRectangle : MyFigure
+        {
+            double getAngle();
+            double getWidth();
+            double getHeight();
+        };
+
+        interface MyCircle : MyFigure
+        {
+            double getRadius();
+        };
+
+        interface MyLine : MyFigure
+        {
+            double getLength();
+            double getThickness();
+        };
+    };
+
+    struct PainterToken {
+        string uuid;
+        string name;
+    };
+    interface DrawingBoard;
+
+    module drawing {
+        interface Command {
+            readonly attribute model::PainterToken issuing;
+
+            void apply(in model::DrawingBoard board)
+                raises (model::exceptions::CommandExecutionException);
+        };
+
+        interface CreateFigureCommand : Command {
+            readonly attribute model::figures::MyFigure figure;
+        };
+
+        interface DestroyFigureCommand : Command {
+            readonly attribute model::figures::FigureToken figure;
+        };
+
+        typedef sequence<model::figures::Point> TranslationSeq;
+        interface TranslateFigureCommand : Command {
+            readonly attribute model::figures::FigureToken figure;
+            TranslationSeq getTranslation();
+        };
+
+        interface RotateFigureCommand : Command {
+            readonly attribute model::figures::FigureToken figure;
+            readonly attribute double angle;
+        };
+
+        interface ScaleFigureCommand : Command {
+            readonly attribute model::figures::FigureToken figure;
+            readonly attribute double scaleFactor;
+        };
+    };
+
+    struct DrawingRoomToken {
+        string uuid;
+        string name;
+    };
+
+    typedef sequence<model::figures::FigureToken> FiguresSeq;
+    interface DrawingBoard {
+        readonly attribute string uuid;
+
+        readonly attribute long height;
+
+        readonly attribute long width;
+
+        FiguresSeq figures();
+
+        model::figures::MyFigure getFigureDetails(in model::figures::FigureToken figureToken)
+            raises (model::exceptions::NoSuchFigurePresentException);
+
+        boolean acceptCommand(in model::drawing::Command command);
+    };
+
+    interface Painter {
+        readonly attribute PainterToken token;
+
+        void onRoomReady(in DrawingBoard drawingBoard);
+
+        void onCommandFailed(in model::drawing::Command command);
+
+        void onCommandExecuted(in model::drawing::Command command);
+    };
+
+    typedef sequence<PainterToken> PainterTokenSeq;
+    interface DrawingRoom {
+        PainterTokenSeq getPainters();
+
+        void join(in Painter painter)
+            raises (model::exceptions::RoomEnteringException);
+
+        void leave(in PainterToken painterToken)
+            raises (model::exceptions::NoSuchPlayerInTheRoomException);
+
+        DrawingBoard getDrawingBoard();
+    };
+};
+
+module setup {
+    module exceptions {
+        exception PlayerAlreadyRegisteredException {};
+        exception NoSuchPainterRegisteredException {};
+        exception NoSuchDrawingRoomException {};
+        exception AccessDeniedException {};
+        exception DrawingRoomAlreadyExistsException {};
+    };
+
+    typedef sequence<model::PainterToken> PainterTokenSeq;
+    interface PainterRegistry {
+        PainterTokenSeq getRegisteredPainters();
+
+        model::PainterToken registerPainter(in string name)
+            raises (setup::exceptions::PlayerAlreadyRegisteredException);
+
+        void unregisterPainter(in model::PainterToken painterToken)
+            raises (setup::exceptions::NoSuchPainterRegisteredException);
+    };
+
+    typedef sequence<model::DrawingRoomToken> DrawingRoomTokenSeq;
+    interface DrawingHall {
+        DrawingRoomTokenSeq getActiveRooms(in model::PainterToken painterToken)
+            raises (setup::exceptions::NoSuchPainterRegisteredException);
+
+        model::DrawingRoom getDrawingRoom(in model::DrawingRoomToken roomToken)
+            raises (setup::exceptions::AccessDeniedException, setup::exceptions::NoSuchDrawingRoomException);
+
+        void createRoom(in string name, in model::PainterToken painterToken)
+            raises (setup::exceptions::AccessDeniedException, setup::exceptions::DrawingRoomAlreadyExistsException);
+    };
+};
